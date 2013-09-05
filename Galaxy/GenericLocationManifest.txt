@@ -1,0 +1,7 @@
+g @GenericLocations\Adjectives.txt
+h @GenericLocations\Specifiers.txt
+i @GenericLocations\Places.txt
+j @GenericLocations\PlacesAdjectiveOnly.txt
+L @VesselName\Places.txt
+N @VesselName\Names.txt
+P @VesselName\Possessives.txt

@@ -1,0 +1,52 @@
+$X $S $G
+$W $S $G
+$X $S $G
+$W $S $G
+It Came from $G
+The $A $X
+The $A $X
+The $A $X
+The $A $X
+The $W of $Y
+The $W of $Y
+The $W of $Y
+The $W of $Y
+//The $X of $Y
+//The $X of $Y
+//The $X of $Y
+//The $X of $Y
+The $X $S $L
+The $X $S $L
+The $W $S $L
+The $W $S $L
+//The $A $W $S $L
+$A $W $S $L
+$T$A $B $X
+$T$A $B $X
+$T$A $X of $Y
+$T$A $X of $Y
+$T$X of $B $Y
+$T$X of $B $Y
+$T$A $W of $Y
+$T$A $W of $Y
+$T$W of $B $Y
+$T$W of $B $Y
+$T$A $X of $N
+$T$A $X of $N
+The $X of $N
+The $X of $N
+$T$A $X $S $L
+$T$A $X $S $L
+$P $X
+$P $X
+$P $A $X
+$P $A $X
+$P $X of $Y
+$P $X of $Y
+$X of the $B One
+$X of the $B Ones
+//$T$X of the $B One
+//$T$X of the $B Ones
+$A $W of $B One
+$A $W of $B Ones
+The $A One

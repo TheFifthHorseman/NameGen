@@ -1,0 +1,17 @@
+A @VesselNames\Adjectives.txt
+B @VesselNames\Adjectives.txt
+E _Ones _ _One 
+G @GenericLocationPatterns.txt
+g @GenericLocations\Adjectives.txt
+h @GenericLocations\Specifiers.txt
+i @GenericLocations\Places.txt
+j @GenericLocations\PlacesAdjectiveOnly.txt
+L @VesselNames\Places.txt
+N @VesselNames\Names.txt
+P @VesselNames\Possessives.txt
+S from of
+T The_ _
+t the_ _
+W @VesselNames\Subjects.txt
+X @VesselNames\Nouns.txt
+Y @VesselNames\Objects.txt

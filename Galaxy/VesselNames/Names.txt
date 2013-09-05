@@ -1,0 +1,157 @@
+Outsider
+Cybele
+
+//Christian
+Cain
+Judas Iscariot
+Abaddon
+
+// Greek
+Hades
+Andromeda
+Orion
+Gorgon Medusa Stheno Euryale 
+Pegasus
+Charon
+Vulcan Mulciber
+Circe
+Geryon
+Astarte
+Apollo
+Cerberus Orthrus
+Prometheus
+Sphinx
+Nessus Chiron Centaur
+Janus
+Pandora
+Nemesis
+Leonidas
+Phobos
+Deimos
+
+//Voudoun
+Kalfu
+Samedi Baron_Samedi
+Damballah
+Damballa
+Bacalou
+Kriminel Baron_Kriminel
+Bugid_Y_Aiba
+Debas Debard Deebat Captain_Debas Captain_Debard Captain_Deebat
+Ghede Guede
+Cimitiere Baron_Cimitiere Brave_Guede
+Baron_La_Croix La_Croix Lakwa
+Ti_Malice
+Ghede_Loraj Loraj
+Nibo
+Brave
+
+//English / Irish
+Herne
+Banshee
+
+//Celtic
+Morrigan Morrighan Mor-rioghain
+Badb
+
+// Iranian
+Zahhak Zohhak Dahaka
+
+//Sumerian
+Ishtar
+
+//Slavic
+Chernobog
+Koschei
+
+//Roman
+Dis_Pater
+
+//Norse
+Aesir
+Vanir
+Disir
+Jotunn
+Loki
+Surtr
+Nidhogg Nidhoggr
+Thor
+Tyr
+Yggdrasill
+Fenrir Fenris Fenrisulfr Hrodvitnir Vanagandr
+Garm Garmr
+
+//Divine Comedy
+Malacoda
+Malebranche
+Scarmiglione
+Rubicante
+
+// Divine comedy? Or mythological?
+Nimrod Ephialtes Otus Briareus Typhon Antaeus
+
+// Hindi
+Kalika Kali
+Bhairavi
+Dhumavati
+Bagalamukhi
+Durga
+Shiva
+Shitala
+Chandi Chandika Ran-Chandi
+Chamunda Chamundi Chamundeshwari Charchika
+
+//Egyptian
+//Done
+
+Seth Set Setesh Sutekh
+Anubis Anput
+Amun Amon
+Apep Apophis
+Maat Ma'at Mat Mayet
+Isfet
+Neith Nit Net Neit
+Sekhmet Sachmis Sakhmet Sekhet Sakhet
+Nekhbet
+Am-heh
+Ammit Ammut Ahemait
+Aken
+Imentet
+Meretseger Mertseger
+Shait Shai Sai Shay Psais
+Nephthys
+Osiris Usiris Asar Asari Aser Ausar Ausir Wesir Usir Usire Ausare
+Sobek
+Maahes Mihos Miysis Mios Maihes Mahes
+Menhit Menchit
+Anhur Onuris Onouris An-Her Anhuret Han-Her Inhert
+Montu Monthu Montju Menthu
+Satet Satis Satjit Sates Sati
+Shezmu Shesmu Schezemu Schesmu Shesemu Shezmou Shesmou Sezmu Sesmu
+Hededet Hedjedjet Serket Selket Serqet Selcis
+Hauh Huah Hahuh Hauhet
+Khonsu Chonsu Khensu Khons Chons Khonshu
+
+//Cthulhu Mythos
+T'yog
+Dagon
+Nyarlathotep
+Nodens
+Azatoth
+Cthulhu
+Yog-Sothoth
+Ghatanothoa
+Bokrug
+Yag-Kosha
+Ulthar
+Tsathoggua
+Shub-Niggurath
+Hastur
+Shoggoth
+Ubbo-Sathla
+Rhan-Tegoth
+Alhazred
+Tindalos
+
+// For fun!
+Armok

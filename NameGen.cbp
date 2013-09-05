@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="NameGen" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\NameGen" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\NameGen" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Galaxy\GenericLocationManifest.txt" />
+		<Unit filename="Galaxy\GenericLocationPatterns.txt" />
+		<Unit filename="Galaxy\GenericLocations\Adjectives.txt" />
+		<Unit filename="Galaxy\GenericLocations\Places.txt" />
+		<Unit filename="Galaxy\GenericLocations\PlacesAdjectiveOnly.txt" />
+		<Unit filename="Galaxy\GenericLocations\Specifiers.txt" />
+		<Unit filename="Galaxy\VesselNameManifest.txt" />
+		<Unit filename="Galaxy\VesselNamePatterns.txt" />
+		<Unit filename="Galaxy\VesselNames\Adjectives.txt" />
+		<Unit filename="Galaxy\VesselNames\Names.txt" />
+		<Unit filename="Galaxy\VesselNames\Nouns.txt" />
+		<Unit filename="Galaxy\VesselNames\Objects.txt" />
+		<Unit filename="Galaxy\VesselNames\Places.txt" />
+		<Unit filename="Galaxy\VesselNames\Possessives.txt" />
+		<Unit filename="Galaxy\VesselNames\Subjects.txt" />
+		<Unit filename="dictionary.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dictionary.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod.h" />
+		<Unit filename="namegen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="namegen.h" />
+		<Unit filename="stringops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stringops.h" />
+		<Unit filename="wordlist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="wordlist.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

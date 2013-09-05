@@ -1,0 +1,87 @@
+Worm
+Golem
+Chimera
+Behemoth Leviathan
+Coatl
+Kraken
+Helix
+Azif
+Ifrit
+Djinn
+Ghoul
+Oni
+Hippogriff
+Siren
+Troll
+Ogre
+Enigma
+Chrysalis
+Claw
+Star
+Demon
+Hyperion
+Succubus Incubus
+Cockatrice Basilisk
+Hobgoblin Goblin Gremlin
+Lycanthrope
+Werewolf
+Siren
+Vampire
+
+// Animals
+Salamander
+Crab
+Wolf
+Hound
+Hellhound
+Horsehead 
+Stallion 
+Horse 
+Centaur
+Widow
+Spider 
+Arachnid 
+Scorpion
+
+Reptile Dragon Wyrm Wyvern Snake Serpent
+Mantis
+
+
+//Scientist/Astronomer
+Kuiper
+
+//Zodiac
+Aries Taurus Gemini Cancer Leo Virgo Libra Scorpio Saggitarius Capricorn Pisces Aquarius
+Ophiuchus Serpentarius
+
+//Musical
+Ais Dis
+
+// Norse
+Norn
+
+//Alphabetic
+// Greek
+Alpha Beta Gamma Delta Epsilon Zeta Eta Theta Iota Lambda Mu Omicron Rho Sigma Tau Upsilon Phi Chi Omega Digamma
+// Ogham
+Aleph Beth Gimel Daleth Teth Yod Kaph Djed Nin Uath Muin Gort Straif Ailm Edad Ifin
+
+//Cthulhu
+Yith
+Yuggoth
+Arkham
+Miskatonic
+
+// Ursa Major
+Dubhe Merak Phecda Megrez Alioth Mizar Benetnasch Polaris
+Alcor 
+Alkaid Alhaud Muscida
+
+// Easter egg
+Stova
+
+//Other
+Pyramid
+
+//Because it's public domain
+Frankenstein
