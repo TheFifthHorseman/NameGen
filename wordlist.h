@@ -14,4 +14,5 @@ inline char* random_wordlist_item(struct WORDLIST wordList);
 inline void free_wordlist(struct WORDLIST *wordList);
 inline void remove_wordlist_item(struct WORDLIST *wordList, int i);
 inline void prune_long_wordlist_entries(struct WORDLIST *wordList, unsigned int truncateTo);
+inline void remove_entry(struct WORDLIST *wordList, char* pattern);
 #endif

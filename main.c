@@ -1,4 +1,3 @@
-/* TODO: Gracefully handle cases where max length is too low */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

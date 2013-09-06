@@ -69,5 +69,16 @@ inline void prune_long_wordlist_entries(struct WORDLIST *wordList, unsigned int 
     int i;
     for (i=0; i<(*wordList).entryCount; ++i)
         if ( strlen((*wordList).entryList[i])>=truncateTo )
-            remove_wordlist_item(wordList, --i);
+            remove_wordlist_item(wordList, i--);
+}
+
+inline void remove_entry(struct WORDLIST *wordList, char* entry)
+{
+    int i;
+    for (i=0; i<(*wordList).entryCount; ++i)
+        if ( strcmp((*wordList).entryList[i], entry )==0)
+        {
+            remove_wordlist_item(wordList, i--);
+            return;
+        }
 }

@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1378486573 source:c:\git\namegen\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"mod.h"
+	"namegen.h"
+
+1374707293 c:\git\namegen\mod.h
+
+1373721675 c:\git\namegen\namegen.h
+
+1373718611 source:c:\git\namegen\mod.c
+	<stdio.h>
+	"mod.h"
+
+1378401213 source:c:\git\namegen\stringops.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"stringops.h"
+
+1373719168 c:\git\namegen\stringops.h
+
+1378371756 source:c:\git\namegen\dictionary.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"stringops.h"
+	"wordlist.h"
+	"dictionary.h"
+
+1378486281 c:\git\namegen\wordlist.h
+
+1378321684 c:\git\namegen\dictionary.h
+
+1378486586 source:c:\git\namegen\namegen.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"stringops.h"
+	"wordlist.h"
+	"dictionary.h"
+
+1378486325 source:c:\git\namegen\wordlist.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"stringops.h"
+	"wordlist.h"
+

@@ -54,7 +54,8 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
 		}
     for (i=0; i<256; ++i)
         prune_long_dictionary_entries( &(dictionaries[i]), maximumOutputLength );
-	selectedPattern=random_wordlist_item(patterns=load_wordlist(get_mod_file_path_2("Galaxy",patternFile, fileNameBuffer)));
+	patterns=load_wordlist(get_mod_file_path_2("Galaxy",patternFile, fileNameBuffer));
+    selectedPattern=random_wordlist_item(patterns);
 	resultString=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
 	do
 	{
@@ -107,14 +108,23 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
 		{
 			fprintf(stderr, "Failed namegen [%s] after %d tries, changing pattern...\n", selectedPattern, MAXIMUM_RETRIES);
 			fflush(stderr);
-			selectedPattern=random_wordlist_item(patterns);
+			remove_entry(&patterns, selectedPattern);
+			if (patterns.entryCount==0)
+            {
+                fprintf(stderr, "Failed namegen: Cannot find a pattern that produces valid %d char output\n", maximumOutputLength-1);
+                fflush(stderr);
+                j=0;
+                resultString="";
+            }
+            else
+                selectedPattern=random_wordlist_item(patterns);
 		}
 	} while (j);
-	for(appendPointer=resultString; *appendPointer; ++appendPointer)
-		if (*appendPointer=='_')
-			*appendPointer=' ';
-	appendPointer=resultString;
-	strcpy(resultString=(char*)malloc(maximumOutputLength),appendPointer);
+    for(appendPointer=resultString; *appendPointer; ++appendPointer)
+        if (*appendPointer=='_')
+            *appendPointer=' ';
+    appendPointer=resultString;
+    strcpy(resultString=(char*)malloc(maximumOutputLength),appendPointer);
 	free (appendPointer);
 	free (fileNameBuffer);
 	for (i=0; i<256; ++i)
