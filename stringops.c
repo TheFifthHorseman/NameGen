@@ -59,11 +59,9 @@ inline void clean_string_array(char** strings, int* stringCount)
 	{
 		if (trim(strings[i]))
 		{
-		    blockCommentStart=strstr(strings[i], "/*");
-		    blockCommentEnd=strstr(strings[i], "*/");
+		    blockCommentStart=blockComment?strings[i]:strstr(strings[i], "/*");
+		    blockCommentEnd=blockCommentStart?strstr(blockCommentStart, "*/"):NULL;
             lineCommentStart=strstr(strings[i], "//");
-            if (blockComment)
-                blockCommentStart=strings[i];
             while (blockCommentStart && blockCommentEnd)
             {
                 blockComment=0;
@@ -77,12 +75,12 @@ inline void clean_string_array(char** strings, int* stringCount)
                 {
                     memmove(blockCommentStart,blockCommentEnd,strlen(blockCommentEnd)+1);
                     blockComment=(int)(blockCommentStart=strstr(strings[i], "/*"));
-                    blockCommentEnd=strstr(strings[i], "*/");
+                    blockCommentEnd=blockCommentStart?strstr(blockCommentStart, "*/"):NULL;
                 }
             }
             if (lineCommentStart)
                 *lineCommentStart=0;
-            if (blockCommentStart)
+            if ((blockComment=(int)(blockCommentStart=strstr(strings[i], "/*"))))
             {
                 *blockCommentStart=0;
             }
