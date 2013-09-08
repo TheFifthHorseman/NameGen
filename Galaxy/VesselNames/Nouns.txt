@@ -6,7 +6,7 @@ Harbinger Herald Vanguard Apostle
 Judgement Nemesis
 Abomination Monster Monstrosity Nightmare Horror Terror Beast Creature Thing
 Anomaly
-Prison Cell Cage
+Prison /*Cell*/ Cage
 Bastard Scion Son Spawn Get Progeny Child
 Voyager Traveller
 Lair Nest Hive Pit Fortress Citadel Labyrinth Maze Ruin Tower
@@ -29,7 +29,7 @@ Murderer Slayer Slaughterer Ravager Butcher
 Dead Dead Dead Undead
 Specter Haunter Shadow Wraith
 Watcher Sentinel Guardian
-Bell
+//Bell
 Sword Hammer Blade Scythe Sickle Arrow Lance Weapon
 Breath Rain
 Crone
@@ -47,7 +47,7 @@ Serpent Hydra Dragon
 Ogre Titan Giant Hulk Leviathan Colossus
 Legion Cohort Army
 Hymn
-Jester
+//Jester
 Night Moon Star
 Beginning Father Mother Patriarch Matriarch Source
 Priest Prophet Prophecy
@@ -60,7 +60,7 @@ Vanguard
 Whisper Whisperer Speaker
 Horizon Reach Limit
 Heart Core Center Meridian Focus
-Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World Fool
+Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Chalice Grail Vessel
 Arcanum Arcana Mystery Secret Enigma Question
 Jaw Maw Mouth Jaws Gullet

@@ -46,7 +46,7 @@ Stone Fossilized
 Hanged Hanging High
 Rending Reaping Sundering Destroying Annihilating Piercing Shattering Severing Strangling Drowning
 Twisting Warping Mutating Shifting Transforming
-Spinning Rotating
+Circling Rolling /*Spinning Rotating*/
 Sorrowful
 Legendary
 Whispered Whispering

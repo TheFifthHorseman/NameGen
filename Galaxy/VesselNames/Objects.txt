@@ -23,7 +23,7 @@ Watchers Souls Spirits Mind Soul Ghosts Wraiths Specters Apparitions Phantoms Gh
 Damnation Oblivion
 Void Twilight Gloom Darkness Shadows Shadow
 Horizons
-Staves Pentacles Swords Wands Grails Arrows Lances
-Magicians Emperors Chariots Hermits Wheels Fortunes Justice Death Temperance Devil Tower Stars Moon Moons Sun Suns Judgement World Worlds Fool Fools
+Staves Pentacles Swords /*Wands*/ Grails Arrows Lances
+Magicians Emperors Chariots Hermits Wheels Fortunes Justice Death Temperance Devil Tower Stars Moon Moons Sun Suns Judgement World Worlds /*Fool*/ Fools
 Arcana Mysteries Secrets Enigmas Enigma
 Ruin Ruins

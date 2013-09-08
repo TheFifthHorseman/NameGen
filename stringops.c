@@ -49,32 +49,43 @@ inline char* trim(char *t)
 }
 
 inline void clean_string_array(char** strings, int* stringCount)
-/* Trim strings in array, remove null-length entries and comments;
-   DISABLED: Comment indicator: / as the first non-whitespace char.
-   Now supports // for commenting out the remainder of the line. */
+/* Trim strings in array, remove null-length entries and comments */
 {
 	int i;
 	int blockComment;
-	char *c;
+	char *lineCommentStart, *blockCommentStart, *blockCommentEnd;
 	blockComment=0;
 	for (i=0; i<*stringCount; ++i)
 	{
 		if (trim(strings[i]))
 		{
-			if ((c=strstr(strings[i], "//")))
-			{
-			    if (strstr(c, "*/"))
-                    blockComment=0;
-				*c=0;
-			}
-            else if(blockComment)
+		    blockCommentStart=strstr(strings[i], "/*");
+		    blockCommentEnd=strstr(strings[i], "*/");
+            lineCommentStart=strstr(strings[i], "//");
+            if (blockComment)
+                blockCommentStart=strings[i];
+            while (blockCommentStart && blockCommentEnd)
             {
-                if ((strings[i]=strstr(strings[i], "*/")))
-                    strings[i]=(!strlen(strings[i]+2)?NULL:strings[i]+2);
-                blockComment=!strings[i];
+                blockComment=0;
+                blockCommentEnd+=2;
+                if (lineCommentStart && lineCommentStart<blockCommentEnd)
+                {
+                    *blockCommentStart=0;
+                    lineCommentStart=NULL;
+                }
+                else
+                {
+                    memmove(blockCommentStart,blockCommentEnd,strlen(blockCommentEnd)+1);
+                    blockComment=(int)(blockCommentStart=strstr(strings[i], "/*"));
+                    blockCommentEnd=strstr(strings[i], "*/");
+                }
             }
-            else if ((blockComment=(int)(c=strstr(strings[i], "/*"))))
-                *c=0;
+            if (lineCommentStart)
+                *lineCommentStart=0;
+            if (blockCommentStart)
+            {
+                *blockCommentStart=0;
+            }
 		}
 		if (strings[i]==NULL || strings[i][0]==0 /*|| strings[i][0]=='/'*/)
 		{

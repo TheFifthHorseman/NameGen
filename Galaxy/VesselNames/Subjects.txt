@@ -1,7 +1,7 @@
 Color
-Shogun Lord God Deity Idol Ruler Tyrant Power Master Emperor Imperator Empress Queen King Imperatrix General Page Jack
+Shogun Lord God Deity Idol Ruler Tyrant Power Master Emperor Imperator Empress Queen King Imperatrix General Page /*Jack*/
 Outcast Pariah Outsider Exile
-Prison Cell Seal Chamber Fortress Ruin Tower
+Prison /*Cell*/ Cage Seal Chamber Fortress Ruin Tower
 Tomb Sepulchre Vault Grave Crypt
 Pyramid Obelisk Temple Shrine Altar Tower
 Bastard Scion Descendant Son Offspring Child
@@ -22,7 +22,7 @@ Device Agent System Construct Construction Motor
 Lair Nest Hive Pit Den Well
 Storm Hurricane Fury Malice Rage Wrath
 Defilement Defiler Contagion Plague Pandemic Sickness
-Harvest Harvester Crop
+Harvest Harvester /*Crop*/
 Chaos Strife Entropy Anarchy Feud
 Murderer Slayer Slaughterer Ravager Butcher
 Death Fate Damnation Doom Destiny End Fortune Misfortune Order Fall Mire Oblivion Annihilation Ragnarok
@@ -37,11 +37,11 @@ Prisoner Servant Slave Worshipper Follower Agent
 Imperative Decree Law Order Command
 Cult Cabal Order
 Thorn Spike Fang Claw
-Eye Lens Feeler
+Eye /*Lens*/ Feeler
 Tendril Hand Limb Tentacle Head Skull Shell Husk Mandible Jaws Teeth Maw Fist Gullet Appendage Mouth
 Shell Husk Cocoon Chrysalis Hulk
 Heart Core Center Matrix Focus
-Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World Fool
+Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Corona
 Chalice Grail Vessel
 Arcanum Arcana Secret Mystery Enigma Question
