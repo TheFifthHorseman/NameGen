@@ -62,16 +62,15 @@ inline void clean_string_array(char** strings, int* stringCount)
 		if (trim(strings[i]))
 		{
 			if ((c=strstr(strings[i], "//")))
+			{
+			    if (strstr(c, "*/"))
+                    blockComment=0;
 				*c=0;
+			}
             else if(blockComment)
             {
                 if ((strings[i]=strstr(strings[i], "*/")))
-                {
-                    if (!strlen(strings[i]+2))
-                        strings[i]=NULL;
-                    else
-                        strings[i]+=2;
-                }
+                    strings[i]=(!strlen(strings[i]+2)?NULL:strings[i]+2);
                 blockComment=!strings[i];
             }
             else if ((blockComment=(int)(c=strstr(strings[i], "/*"))))
