@@ -12,7 +12,8 @@
     * The word may be a synonym of one already used (keep last selection if retries run out)
     Larger values = slower generation, so be reasonable */
 /* #define MAXIMUM_RETRIES 100 */
-#define MAXIMUM_RETRIES 30
+/*#define MAXIMUM_RETRIES 30*/
+#define MAXIMUM_RETRIES 100
 /* How many levels of token nesting are permitted until breaking generation as a potentially infinite loop */
 /* #define MAXIMUM_TOKEN_DEPTH MAXIMUM_RETRIES */
 #define MAXIMUM_TOKEN_DEPTH 5
