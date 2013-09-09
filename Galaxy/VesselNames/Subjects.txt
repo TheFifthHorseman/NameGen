@@ -49,3 +49,4 @@ Sword Hammer Blade Scythe Arrow Lance Sickle Weapon
 Legion Cohort Army
 Speaker Whisper Whisperer
 Contract Agenda Deal
+Witch

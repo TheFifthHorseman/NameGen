@@ -33,6 +33,7 @@ Watcher Sentinel Guardian
 Sword Hammer Blade Scythe Sickle Arrow Lance Weapon
 Breath Rain
 Crone
+Witch
 Crown King Empire Palace Throne
 Cult Cabal Cultist Order
 Order Command Decree Law
