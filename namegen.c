@@ -21,7 +21,7 @@
 
 inline void load_manifest_entry (char* manifestEntry, struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices)
 {
-    int j/*, k*/;
+    int j;
 	char  *patternPosition, *fileNameBuffer;
 	fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
     if (strlen(manifestEntry)>3)
@@ -65,12 +65,40 @@ inline void dictionary_init(unsigned int maximumOutputLength, char* manifestFile
 	free(fileNameBuffer);
 }
 
+inline void get_non_colliding_wordlist(struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices, int i)
+{
+    int j, redo, retries=MAXIMUM_RETRIES;
+    do
+    {
+        wordListChoices[i]=random_dictionary_item(dictionaries[i]);
+        for (j=redo=0; j<256 && !redo; ++j)
+            if(j!=i && wordListChoices[j].entryCount>0 && strchr(hardcodedWordListIndices,j)==NULL)
+                if (wordlist_too_similar(wordListChoices[i], wordListChoices[j]))
+                    redo=1;
+    } while (redo && --retries);
+}
+
+inline void namegen_cleanup(char* appendPointer, char* fileNameBuffer, struct DICTIONARY* dictionaries, struct WORDLIST* patterns, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices)
+{
+    int i,j;
+	free (appendPointer);
+	free (fileNameBuffer);
+	for (i=0; i<256; ++i)
+		free_dictionary(dictionaries+i);
+	free_wordlist(patterns);
+	for (i=0; i<(int)strlen(hardcodedWordListIndices); ++i)
+		if (wordListChoices[j=hardcodedWordListIndices[i]].entryCount)
+			free_wordlist(wordListChoices+j);
+	free(hardcodedWordListIndices);
+}
+
+
 char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char* patternFile)
 {
-	int retries, patternRetries, tokenLoops, redo, i, j/*, k*//*, hardcodedIndicesLength=0*/;
+	int patternRetries, tokenLoops, i, j;
 	char *resultString, *appendPointer, *selectedPattern, *patternPosition, *fileNameBuffer;
 	struct DICTIONARY dictionaries[256];
-	struct WORDLIST /*manifest,*/ patterns, wordListChoices[256];
+	struct WORDLIST patterns, wordListChoices[256];
 	char *hardcodedWordListIndices;
 	if (maximumOutputLength<=0)
 	{
@@ -78,41 +106,7 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
         return (char*) calloc(1,1);
 	}
 
-	/* Dictionary & Wordlist init START : Refactor this into a function. */
-/*void dictionary_init(unsigned int maximumOutputLength, char* manifestFile, struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char** hardcodedIndicesOut)*/
 	dictionary_init(maximumOutputLength, manifestFile, &dictionaries[0], &wordListChoices[0], &hardcodedWordListIndices);
-/*	for (i=0; i<256; ++i)
-	{
-		dictionaries[i]=blank_dictionary();
-		wordListChoices[i]=blank_wordlist();
-	}
-	hardcodedWordListIndices=(char*)calloc(256,sizeof(char));
-	fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
-	manifest=load_wordlist(get_mod_file_path_2("Galaxy",manifestFile, fileNameBuffer));
-	for (i=0; i<manifest.entryCount; ++i)
-		if (strlen(manifest.entryList[i])>3)
-		{
-			j=(int)*(patternPosition=trim(manifest.entryList[i]));
-			if (dictionaries[j].entryCount==0 && wordListChoices[j].entryCount==0)
-				switch(*(patternPosition+=strspn (patternPosition+1,WhiteSpace)+1))
-				{
-					case '@':
-						dictionary_from_file(get_mod_file_path_2("Galaxy",patternPosition+1, fileNameBuffer), &dictionaries[j]);
-						break;
-					default:
-						wordlist_from_string(patternPosition, &wordListChoices[j]);
-						hardcodedWordListIndices[hardcodedIndicesLength++]=j;
-						wordListChoices[j].dataStart=NULL;
-						for (k=0; k<wordListChoices[j].entryCount; ++k)
-							if (!memcmp ( wordListChoices[j].entryList[k], "_", 2))
-								wordListChoices[j].entryList[k][0]=0;
-						break;
-				}
-		}
-    for (i=0; i<256; ++i)
-        prune_long_dictionary_entries( &(dictionaries[i]), maximumOutputLength );
-	free_wordlist(&manifest);*/
-	/* Dictionary & Wordlist init END */
 
     fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
 	patterns=load_wordlist(get_mod_file_path_2("Galaxy",patternFile, fileNameBuffer));
@@ -139,16 +133,8 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
 						case '$':
 							i=(int)*(++patternPosition);
 							++patternPosition;
-							retries=MAXIMUM_RETRIES;
 							if (dictionaries[i].entryCount>0 && strchr(hardcodedWordListIndices,i)==NULL)
-								do
-								{
-									wordListChoices[i]=random_dictionary_item(dictionaries[i]);
-									for (j=redo=0; j<256 && !redo; ++j)
-										if(j!=i && wordListChoices[j].entryCount>0 && strchr(hardcodedWordListIndices,j)==NULL)
-											if (wordlist_too_similar(wordListChoices[i], wordListChoices[j]))
-												redo=1;
-								} while (redo && --retries);
+                                get_non_colliding_wordlist(&dictionaries[0], &wordListChoices[0], hardcodedWordListIndices, i);
 							if (wordListChoices[i].entryCount>0)
 								appendPointer+=sprintf(appendPointer, "%s", random_wordlist_item(wordListChoices[i]));
 							else
@@ -189,16 +175,6 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
             *appendPointer=' ';
     appendPointer=resultString;
     strcpy(resultString=(char*)malloc(maximumOutputLength),appendPointer);
-/* Cleanup START */
-	free (appendPointer);
-	free (fileNameBuffer);
-	for (i=0; i<256; ++i)
-		free_dictionary(&dictionaries[i]);
-	free_wordlist(&patterns);
-	for (i=0; i<(int)strlen(hardcodedWordListIndices); ++i)
-		if (wordListChoices[j=hardcodedWordListIndices[i]].entryCount)
-			free_wordlist(&wordListChoices[j]);
-	free(hardcodedWordListIndices);
-/* Cleanup END */
+    namegen_cleanup(appendPointer, fileNameBuffer, &dictionaries[0], &patterns, &wordListChoices[0], hardcodedWordListIndices);
 	return resultString;
 }
