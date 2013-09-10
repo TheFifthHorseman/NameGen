@@ -82,3 +82,13 @@ inline void remove_entry(struct WORDLIST *wordList, char* entry)
             return;
         }
 }
+
+inline void load_hardcoded_list(char* source, struct WORDLIST* wordList)
+{
+    int k;
+    wordlist_from_string(source, wordList);
+    (*wordList).dataStart=NULL;
+    for (k=0; k< (*wordList).entryCount; ++k)
+        if (!memcmp ( (*wordList).entryList[k], "_", 2))
+            (*wordList).entryList[k][0]=0;
+}

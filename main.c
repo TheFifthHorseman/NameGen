@@ -39,12 +39,14 @@ int main(int argc, char** argv)
     columns=80/(NameLength+1);
     if (columns>1)
         padding/=columns-1;
-   /* for (i=0; i<100000; ++i)
-{
-                result=ship_alien_name();
-printf("%s\n", result);
-free(result);
-}*/
+   //*
+    for (i=0; i<100000; ++i)
+    {
+        result=ship_alien_name();
+        printf("%s\n", result);
+        free(result);
+    }
+/*/
     for (i=0;i<lines;++i)
     {
         for (j=0; j<columns; j++)
@@ -63,6 +65,7 @@ free(result);
             free(result);
         }
     }
+    //*/
 	return 0;
 }
 
