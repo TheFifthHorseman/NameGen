@@ -33,10 +33,10 @@ $T$W of $B $Y
 $T$W of $B $Y
 $T$A $X of $N
 $T$A $X of $N
-$X of $N the $A
-$Y of $N the $A
-$X of $A $N
-$Y of $A $N
+//$X of $N the $A
+//$Y of $N the $A
+//$X of $A $N
+//$Y of $A $N
 The $X of $N
 The $X of $N
 $T$A $X $S $L

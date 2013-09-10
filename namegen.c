@@ -68,14 +68,15 @@ inline void dictionary_init(unsigned int maximumOutputLength, char* manifestFile
 inline void get_non_colliding_wordlist(struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices, int i)
 {
     int j, redo, retries=MAXIMUM_RETRIES;
-    do
-    {
-        wordListChoices[i]=random_dictionary_item(dictionaries[i]);
-        for (j=redo=0; j<256 && !redo; ++j)
-            if(j!=i && wordListChoices[j].entryCount>0 && strchr(hardcodedWordListIndices,j)==NULL)
-                if (wordlist_too_similar(wordListChoices[i], wordListChoices[j]))
-                    redo=1;
-    } while (redo && --retries);
+    if (dictionaries[i].entryCount>0 && strchr(hardcodedWordListIndices,i)==NULL)
+        do
+        {
+            wordListChoices[i]=random_dictionary_item(dictionaries[i]);
+            for (j=redo=0; j<256 && !redo; ++j)
+                if(j!=i && wordListChoices[j].entryCount>0 && strchr(hardcodedWordListIndices,j)==NULL)
+                    if (wordlist_too_similar(wordListChoices[i], wordListChoices[j]))
+                        redo=1;
+        } while (redo && --retries);
 }
 
 inline void namegen_cleanup(char* appendPointer, char* fileNameBuffer, struct DICTIONARY* dictionaries, struct WORDLIST* patterns, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices)
@@ -92,11 +93,58 @@ inline void namegen_cleanup(char* appendPointer, char* fileNameBuffer, struct DI
 	free(hardcodedWordListIndices);
 }
 
+inline void substitute_tokens(char* patternPosition, char* resultString, struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices)
+{
+    char* appendPointer;
+    int i;
+    appendPointer=(char*)memset((void*)resultString,0,sizeof(char)*NAMEGEN_BUFFER_SIZE);
+    while(*patternPosition)
+        switch (*patternPosition)
+        {
+            case '$':
+                i=(int)*(++patternPosition);
+                ++patternPosition;
+                get_non_colliding_wordlist(&dictionaries[0], &wordListChoices[0], hardcodedWordListIndices, i);
+                if (wordListChoices[i].entryCount>0)
+                    appendPointer+=sprintf(appendPointer, "%s", random_wordlist_item(wordListChoices[i]));
+                else
+                    fprintf(stderr, "No wordlist or dictionary for token $%c\n", i);
+                break;
+            default:
+                *(appendPointer++)=*(patternPosition++);
+                break;
+        }
+}
+
+inline void expand_grammar (struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices, char* selectedPattern, char* resultString, int maximumOutputLength)
+{
+    char* patternPosition;
+    char* fileNameBuffer;
+    int tokenLoops;
+    int i;
+    fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
+    patternPosition=(char*)memcpy((void*)fileNameBuffer, (void*)selectedPattern, sizeof(char)*NAMEGEN_BUFFER_SIZE);
+    tokenLoops=MAXIMUM_TOKEN_DEPTH;
+    do
+    {
+        for (i=0;i<256; ++i)
+            if(strchr(hardcodedWordListIndices,i)==NULL)
+                wordListChoices[i].entryCount=0;
+        substitute_tokens(patternPosition, resultString, dictionaries, wordListChoices, hardcodedWordListIndices);
+        if ((i=(int)strchr(resultString,'$')))
+            patternPosition=(char*)memcpy((void*)fileNameBuffer, (void*)resultString, sizeof(char)*NAMEGEN_BUFFER_SIZE);
+    } while(i && resultString[maximumOutputLength]==0 && --tokenLoops);
+    if (!tokenLoops)
+    {
+        fprintf(stderr, "Failed namegen: %d token depth exceeded. Possibly infinite loop?\n", MAXIMUM_TOKEN_DEPTH);
+    }
+    free (fileNameBuffer);
+}
 
 char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char* patternFile)
 {
-	int patternRetries, tokenLoops, i, j;
-	char *resultString, *appendPointer, *selectedPattern, *patternPosition, *fileNameBuffer;
+	int patternRetries, j;
+	char *resultString, *appendPointer, *selectedPattern, *fileNameBuffer;
 	struct DICTIONARY dictionaries[256];
 	struct WORDLIST patterns, wordListChoices[256];
 	char *hardcodedWordListIndices;
@@ -105,71 +153,34 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
         fprintf(stderr, "Failed namegen: Impossible to produce a valid %d char output\n", maximumOutputLength);
         return (char*) calloc(1,1);
 	}
-
 	dictionary_init(maximumOutputLength, manifestFile, &dictionaries[0], &wordListChoices[0], &hardcodedWordListIndices);
-
     fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
 	patterns=load_wordlist(get_mod_file_path_2("Galaxy",patternFile, fileNameBuffer));
-
-    selectedPattern=random_wordlist_item(patterns);
+    if( patterns.entryCount==0 )
+    {
+        fprintf(stderr, "Failed namegen: No patterns");
+        return (char*) calloc(1,1);
+    }
 	resultString=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
 	do
 	{
+        selectedPattern=random_wordlist_item(patterns);
 		patternRetries=MAXIMUM_RETRIES;
 		do
-		{
-			patternPosition=(char*)memcpy((void*)fileNameBuffer, (void*)selectedPattern, sizeof(char)*NAMEGEN_BUFFER_SIZE);
-			tokenLoops=MAXIMUM_TOKEN_DEPTH;
-			do
-			{
-				for (i=0;i<256; ++i)
-					if(strchr(hardcodedWordListIndices,i)==NULL)
-						wordListChoices[i].entryCount=0;
-                /* char or token substitution start */
-				appendPointer=(char*)memset((void*)resultString,0,sizeof(char)*NAMEGEN_BUFFER_SIZE);
-				while(*patternPosition)
-					switch (*patternPosition)
-					{
-						case '$':
-							i=(int)*(++patternPosition);
-							++patternPosition;
-							if (dictionaries[i].entryCount>0 && strchr(hardcodedWordListIndices,i)==NULL)
-                                get_non_colliding_wordlist(&dictionaries[0], &wordListChoices[0], hardcodedWordListIndices, i);
-							if (wordListChoices[i].entryCount>0)
-								appendPointer+=sprintf(appendPointer, "%s", random_wordlist_item(wordListChoices[i]));
-							else
-								fprintf(stderr, "No wordlist or dictionary for token $%c\n", i);
-							break;
-						default:
-							*(appendPointer++)=*(patternPosition++);
-							break;
-					}
-					/* Char or token substitution end */
-				if ((i=(int)strchr(resultString,'$')))
-					patternPosition=(char*)memcpy((void*)fileNameBuffer, (void*)resultString, sizeof(char)*NAMEGEN_BUFFER_SIZE);
-			} while(i && resultString[maximumOutputLength]==0 && --tokenLoops);
-			if (!tokenLoops)
-			{
-				fprintf(stderr, "Failed namegen: %d token depth exceeded. Possibly infinite loop?\n", MAXIMUM_TOKEN_DEPTH);
-				fflush(stderr);
-			}
-		} while ((j=strlen(resultString)>maximumOutputLength-1) && patternRetries--);
+            expand_grammar(&dictionaries[0], &wordListChoices[0], hardcodedWordListIndices, selectedPattern, resultString, maximumOutputLength);
+		while ((j=strlen(resultString)>maximumOutputLength-1) && patternRetries--);
 		if ((j=(j|| patternRetries<=0)))
 		{
 			fprintf(stderr, "Failed namegen [%s] after %d tries, changing pattern...\n", selectedPattern, MAXIMUM_RETRIES);
-			fflush(stderr);
 			remove_entry(&patterns, selectedPattern);
 			if (patterns.entryCount==0)
             {
                 fprintf(stderr, "Failed namegen: Cannot find a pattern that produces valid %d char output\n", maximumOutputLength-1);
-                fflush(stderr);
-                j=0;
-                resultString[0]=0;
+                resultString[0]=j=0;
             }
-            else
-                selectedPattern=random_wordlist_item(patterns);
 		}
 	} while (j);
+
     for(appendPointer=resultString; *appendPointer; ++appendPointer)
         if (*appendPointer=='_')
             *appendPointer=' ';

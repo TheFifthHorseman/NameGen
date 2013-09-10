@@ -26,5 +26,5 @@ Horizons
 Staves Pentacles Swords /*Wands*/ Grails Arrows Lances
 Magicians Emperors Chariots Hermits Wheels Fortunes Justice Death Temperance Devil Tower Stars Moon Moons Sun Suns Judgement World Worlds /*Fool*/ Fools
 Arcana Mysteries Secrets Enigmas Enigma
-Ruin Ruins
+Ruin Ruins Ash Dust
 Witches

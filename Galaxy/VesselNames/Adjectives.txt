@@ -5,7 +5,7 @@ Dark Tenebrous Shadowy Shadowed Gloomy
 Summoning Calling Summoned
 Sentient
 Rocky Granite Basalt
-Soundless Silent
+Soundless Silent Noiseless Screaming Howling Ululating
 Fading Grey Faded
 Haunted Grim Dead Undead Unliving Undying Dying Fallen Morbid Rotting
 Cold Frozen Freezing
@@ -14,6 +14,7 @@ Lurking Shrouded Hidden
 First Final Last Ultimate
 Unrestrained Unbound Boundless Unshackled Unchained Limitless Unlimited Chained Sealed Imprisoned
 Black Crimson Red Scarlet Iridescent Purple Grey Lambent Yellow Cerulean Viridian
+Luminous Radiant Lambent Star
 Living Breathing Beating
 Bitter Vengeful
 Savage Furious

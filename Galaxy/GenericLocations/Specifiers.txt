@@ -80,8 +80,5 @@ Alkaid Alhaud Muscida
 // Easter egg
 Stova
 
-//Other
-Pyramid
-
 //Because it's public domain
 Frankenstein

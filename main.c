@@ -4,6 +4,7 @@
     + Fix the mess with hardcoded mod paths!
     + Namegen should be called with the path as an argument!
     + Support / as directory separator (Unix, Linux, Mac)
+    + Namegen validator
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,7 +40,7 @@ int main(int argc, char** argv)
     columns=80/(NameLength+1);
     if (columns>1)
         padding/=columns-1;
-   //*
+   /*
     for (i=0; i<100000; ++i)
     {
         result=ship_alien_name();

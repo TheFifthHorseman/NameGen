@@ -21,7 +21,7 @@ Chaos Strife Entropy Anarchy
 Death Fate Damnation Doom Destiny End Fortune Misfortune Order Fall Mire Oblivion Annihilation
 Defiler Contagion Plague Pandemic Calamity Disease
 Sentinel Sentry Guardian Watcher Knight Rook Bishop Templar Paladin Warrior Marauder Berserker
-Bishop God Lord Idol Ruler Tyrant Master Emperor Imperator Empress Queen King Imperatrix General
+Bishop God Lord Lady Idol Ruler Tyrant Master Emperor Imperator Empress Queen King Imperatrix General
 Seeker Hunter Hound
 Thorn Spike Fang Claw
 Razor Reaper Blade Edge Severance Reaver Harvester
@@ -63,8 +63,10 @@ Horizon Reach Limit
 Heart Core Center Meridian Focus
 Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Chalice Grail Vessel
+Ship Craft Carrier Drakkar
 Arcanum Arcana Mystery Secret Enigma Question
 Jaw Maw Mouth Jaws Gullet
 Legend Saga
 Widow
 Contract Agenda Deal
+Fire Blaze Ash Cinder

@@ -40,6 +40,7 @@ Thorn Spike Fang Claw
 Eye /*Lens*/ Feeler
 Tendril Hand Limb Tentacle Head Skull Shell Husk Mandible Jaws Teeth Maw Fist Gullet Appendage Mouth
 Shell Husk Cocoon Chrysalis Hulk
+Ash Dust Flames Cinders
 Heart Core Center Matrix Focus
 Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Corona
