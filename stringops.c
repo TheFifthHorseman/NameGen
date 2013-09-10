@@ -8,7 +8,7 @@ inline int too_similar(char* a, char* b)
 	int i;
 	if (a==b) return 1;
 	if(!a || !b) return 0;
-	for (i=0; i<3; ++i)
+	for (i=0; i<4; ++i)
 		if (*a!=*b) return 0;
 		else if (*(a++)==0 || *(b++)==0) return 1;
 	return 1;
@@ -29,10 +29,10 @@ inline int split_string_DESTRUCTIVE(char* inputString, int* pieceCount, char*** 
  DESTRUCTIVE FOR INPUT ARGUMENT!!!*/
 {
 	char **pieces;
-	int i=0;
+	int i;
 	*pieceCount=count_character_occurences(inputString, splitBy)+1; /* Count how many substrings will result */
 	*ouputPieces=pieces=(char **)malloc(*pieceCount*sizeof(char **));
-	for (;i<*pieceCount; i++) pieces[i]=strtok ((i?NULL:inputString), splitBy);
+	for (i=0;i<*pieceCount; i++) pieces[i]=strtok ((i?NULL:inputString), splitBy);
 	return *pieceCount;
 }
 
@@ -81,13 +81,12 @@ inline void clean_string_array(char** strings, int* stringCount)
             if (lineCommentStart)
                 *lineCommentStart=0;
             if ((blockComment=(int)(blockCommentStart=strstr(strings[i], "/*"))))
-            {
                 *blockCommentStart=0;
-            }
 		}
 		if (strings[i]==NULL || strings[i][0]==0 /*|| strings[i][0]=='/'*/)
 		{
-			if (i<--*stringCount) memmove(&strings[i], &strings[i+1], sizeof(char*)*(*stringCount-i));
+			if (i<--*stringCount)
+                memmove(&strings[i], &strings[i+1], sizeof(char*)*(*stringCount-i));
 			i--;
 		}
 	}

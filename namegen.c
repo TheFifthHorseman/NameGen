@@ -5,6 +5,7 @@
 #include "stringops.h"
 #include "wordlist.h"
 #include "dictionary.h"
+#include "namegen.h"
 /* Buffer size for file names and output string. Should be larger than maximum expected length of either of these. */
 #define NAMEGEN_BUFFER_SIZE 256
 /* How many times to retry generation if:
@@ -19,20 +20,28 @@
 #define MAXIMUM_TOKEN_DEPTH 5
 char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char* patternFile)
 {
-	int retries, patternRetries, tokenLoops, redo, i, j, k, hardcodedIndicesLength=0;
+	int retries, patternRetries, tokenLoops, redo, i, j/*, k*//*, hardcodedIndicesLength=0*/;
 	char *resultString, *appendPointer, *selectedPattern, *patternPosition, *fileNameBuffer;
 	struct DICTIONARY dictionaries[256];
-	struct WORDLIST manifest, patterns, wordListChoices[256];
+	struct WORDLIST /*manifest,*/ patterns, wordListChoices[256];
 	char *hardcodedWordListIndices;
-	/* 23 chars printable plus null-terminator; tested to be the "sweet spot" for us */
-	if (!maximumOutputLength) maximumOutputLength=24;
-	for (i=0; i<256; ++i)
+	if (maximumOutputLength<=0)
+	{
+        fprintf(stderr, "Failed namegen: Impossible to produce a valid %d char output\n", maximumOutputLength);
+        return (char*) calloc(1,1);
+	}
+
+	/* Dictionary & Wordlist init START : Refactor this into a function. */
+/*void dictionary_init(unsigned int maximumOutputLength, char* manifestFile, struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char** hardcodedIndicesOut)*/
+	dictionary_init(maximumOutputLength, manifestFile, &dictionaries[0], &wordListChoices[0], &hardcodedWordListIndices);
+/*	for (i=0; i<256; ++i)
 	{
 		dictionaries[i]=blank_dictionary();
 		wordListChoices[i]=blank_wordlist();
 	}
 	hardcodedWordListIndices=(char*)calloc(256,sizeof(char));
-	manifest=load_wordlist(get_mod_file_path_2("Galaxy",manifestFile, fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE)));
+	fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
+	manifest=load_wordlist(get_mod_file_path_2("Galaxy",manifestFile, fileNameBuffer));
 	for (i=0; i<manifest.entryCount; ++i)
 		if (strlen(manifest.entryList[i])>3)
 		{
@@ -55,7 +64,12 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
 		}
     for (i=0; i<256; ++i)
         prune_long_dictionary_entries( &(dictionaries[i]), maximumOutputLength );
+	free_wordlist(&manifest);*/
+	/* Dictionary & Wordlist init END */
+
+    fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
 	patterns=load_wordlist(get_mod_file_path_2("Galaxy",patternFile, fileNameBuffer));
+
     selectedPattern=random_wordlist_item(patterns);
 	resultString=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
 	do
@@ -70,6 +84,7 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
 				for (i=0;i<256; ++i)
 					if(strchr(hardcodedWordListIndices,i)==NULL)
 						wordListChoices[i].entryCount=0;
+                /* char or token substitution start */
 				appendPointer=(char*)memset((void*)resultString,0,sizeof(char)*NAMEGEN_BUFFER_SIZE);
 				while(*patternPosition)
 					switch (*patternPosition)
@@ -96,6 +111,7 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
 							*(appendPointer++)=*(patternPosition++);
 							break;
 					}
+					/* Char or token substitution end */
 				if ((i=(int)strchr(resultString,'$')))
 					patternPosition=(char*)memcpy((void*)fileNameBuffer, (void*)resultString, sizeof(char)*NAMEGEN_BUFFER_SIZE);
 			} while(i && resultString[maximumOutputLength]==0 && --tokenLoops);
@@ -115,7 +131,7 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
                 fprintf(stderr, "Failed namegen: Cannot find a pattern that produces valid %d char output\n", maximumOutputLength-1);
                 fflush(stderr);
                 j=0;
-                resultString="";
+                resultString[0]=0;
             }
             else
                 selectedPattern=random_wordlist_item(patterns);
@@ -126,15 +142,58 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
             *appendPointer=' ';
     appendPointer=resultString;
     strcpy(resultString=(char*)malloc(maximumOutputLength),appendPointer);
+/* Cleanup START */
 	free (appendPointer);
 	free (fileNameBuffer);
 	for (i=0; i<256; ++i)
 		free_dictionary(&dictionaries[i]);
 	free_wordlist(&patterns);
-	free_wordlist(&manifest);
-	for (i=0; i<hardcodedIndicesLength; ++i)
+	for (i=0; i<(int)strlen(hardcodedWordListIndices); ++i)
 		if (wordListChoices[j=hardcodedWordListIndices[i]].entryCount)
 			free_wordlist(&wordListChoices[j]);
 	free(hardcodedWordListIndices);
+/* Cleanup END */
 	return resultString;
+}
+
+void dictionary_init(unsigned int maximumOutputLength, char* manifestFile, struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char** hardcodedIndicesOut)
+{
+    int i, j, k, hardcodedIndicesLength=0;
+	char  *patternPosition, *fileNameBuffer;
+/*	struct DICTIONARY dictionaries[256];*/
+	struct WORDLIST manifest;/*, wordListChoices[256];*/
+	char *hardcodedWordListIndices;
+    for (i=0; i<256; ++i)
+	{
+		dictionaries[i]=blank_dictionary();
+		wordListChoices[i]=blank_wordlist();
+	}
+	hardcodedWordListIndices=(char*)calloc(256,sizeof(char));
+	fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
+	manifest=load_wordlist(get_mod_file_path_2("Galaxy",manifestFile, fileNameBuffer));
+	for (i=0; i<manifest.entryCount; ++i)
+		if (strlen(manifest.entryList[i])>3)
+		{
+			j=(int)*(patternPosition=trim(manifest.entryList[i]));
+			if (dictionaries[j].entryCount==0 && wordListChoices[j].entryCount==0)
+				switch(*(patternPosition+=strspn (patternPosition+1,WhiteSpace)+1))
+				{
+					case '@':
+						dictionary_from_file(get_mod_file_path_2("Galaxy",patternPosition+1, fileNameBuffer), &dictionaries[j]);
+						break;
+					default:
+						wordlist_from_string(patternPosition, &wordListChoices[j]);
+						hardcodedWordListIndices[hardcodedIndicesLength++]=j;
+						wordListChoices[j].dataStart=NULL;
+						for (k=0; k<wordListChoices[j].entryCount; ++k)
+							if (!memcmp ( wordListChoices[j].entryList[k], "_", 2))
+								wordListChoices[j].entryList[k][0]=0;
+						break;
+				}
+		}
+    for (i=0; i<256; ++i)
+        prune_long_dictionary_entries( &(dictionaries[i]), maximumOutputLength );
+    *hardcodedIndicesOut=hardcodedWordListIndices;
+	free_wordlist(&manifest);
+	free(fileNameBuffer);
 }
