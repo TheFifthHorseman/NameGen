@@ -44,7 +44,7 @@ int main(int argc, char** argv)
     if (columns>1)
         padding/=columns-1;
    /*
-    for (i=0; i<100000; ++i)
+    for (i=0; i<1; ++i)
     {
         result=ship_alien_name();
         printf("%s\n", result);

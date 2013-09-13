@@ -31,7 +31,8 @@ static inline void load_manifest_entry (char* manifestEntry, struct DICTIONARY* 
             switch(*(patternPosition+=strspn (patternPosition+1,WhiteSpace)+1))
             {
                 case '@':
-                    dictionary_from_file(get_mod_file_path_2("Galaxy",patternPosition+1, fileNameBuffer), &dictionaries[j]);
+                    dictionary_from_files(patternPosition, &dictionaries[j]);
+/*                    dictionary_from_file(get_mod_file_path_2("Galaxy",patternPosition+1, fileNameBuffer), &dictionaries[j]);*/
                     break;
                 default:
                     load_hardcoded_list(patternPosition, &wordListChoices[j]);
@@ -55,7 +56,7 @@ static inline void dictionary_init(unsigned int maximumOutputLength, char* manif
 	}
 	hardcodedWordListIndices=(char*)calloc(256,sizeof(char));
 	fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
-	manifest=load_wordlist(get_mod_file_path_2("Galaxy",manifestFile, fileNameBuffer));
+	manifest=load_wordlist(get_mod_file_path_2("Galaxy", manifestFile, fileNameBuffer));
 	for (i=0; i<manifest.entryCount; ++i)
         load_manifest_entry(manifest.entryList[i], dictionaries, wordListChoices, hardcodedWordListIndices);
     for (i=0; i<256; ++i)
@@ -116,7 +117,7 @@ static inline void substitute_tokens(char* patternPosition, char* resultString, 
         }
 }
 
-static inline void expand_grammar (struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices, char* selectedPattern, char* resultString, int maximumOutputLength)
+static inline void grammar_produce (struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices, char* selectedPattern, char* resultString, int maximumOutputLength)
 {
     char* patternPosition;
     char* fileNameBuffer;
@@ -165,7 +166,7 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
         selectedPattern=random_wordlist_item(patterns);
 		patternRetries=MAXIMUM_RETRIES;
 		do
-            expand_grammar(&dictionaries[0], &wordListChoices[0], hardcodedWordListIndices, selectedPattern, resultString, maximumOutputLength);
+            grammar_produce(&dictionaries[0], &wordListChoices[0], hardcodedWordListIndices, selectedPattern, resultString, maximumOutputLength);
 		while ((j=strlen(resultString)>maximumOutputLength-1) && patternRetries--);
 		if ((j=(j|| patternRetries<=0)))
 		{

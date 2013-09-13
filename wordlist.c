@@ -23,8 +23,17 @@ inline void init_wordlist(struct WORDLIST* wordlist)
 
 inline struct WORDLIST load_wordlist(char* fileName)
 {
-	struct WORDLIST wordlist;
+    struct WORDLIST wordlist;
 	wordlist.entryList=file_get_lines(fileName, &(wordlist.entryCount));
+	wordlist.dataStart=&(wordlist.entryList[0][0]);
+	clean_string_array(wordlist.entryList, &(wordlist.entryCount));
+	return wordlist;
+}
+
+inline struct WORDLIST load_wordlist_multi(char* fileNames)
+{
+	struct WORDLIST wordlist;
+	wordlist.entryList=files_get_lines(fileNames, &(wordlist.entryCount));
 	wordlist.dataStart=&(wordlist.entryList[0][0]);
 	clean_string_array(wordlist.entryList, &(wordlist.entryCount));
 	return wordlist;

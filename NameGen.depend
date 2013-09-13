@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1378486678 source:c:\git\namegen\main.c
+1379089297 source:c:\documents and settings\micha許moje dokumenty\programming\namegen\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -7,24 +7,46 @@
 	"mod.h"
 	"namegen.h"
 
-1374707293 c:\git\namegen\mod.h
+1379087340 c:\documents and settings\micha許moje dokumenty\programming\namegen\stringops.h
 
-1373721675 c:\git\namegen\namegen.h
+1379085407 c:\documents and settings\micha許moje dokumenty\programming\namegen\wordlist.h
 
-1373718611 source:c:\git\namegen\mod.c
+1379084145 c:\documents and settings\micha許moje dokumenty\programming\namegen\dictionary.h
+
+1378846634 c:\documents and settings\micha許moje dokumenty\programming\namegen\namegen.h
+
+1379086744 source:c:\documents and settings\micha許moje dokumenty\programming\namegen\namegen.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"stringops.h"
+	"wordlist.h"
+	"dictionary.h"
+	"namegen.h"
+
+1374707293 c:\documents and settings\micha許moje dokumenty\programming\namegen\mod.h
+
+1379089383 source:c:\documents and settings\micha許moje dokumenty\programming\namegen\stringops.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"stringops.h"
+
+1373718611 source:c:\documents and settings\micha許moje dokumenty\programming\namegen\mod.c
 	<stdio.h>
 	"mod.h"
 
-1378401213 source:c:\git\namegen\stringops.c
+1379089392 source:c:\documents and settings\micha許moje dokumenty\programming\namegen\wordlist.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	<time.h>
 	"stringops.h"
+	"wordlist.h"
 
-1373719168 c:\git\namegen\stringops.h
-
-1378371756 source:c:\git\namegen\dictionary.c
+1379085421 source:c:\documents and settings\micha許moje dokumenty\programming\namegen\dictionary.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -32,25 +54,4 @@
 	"stringops.h"
 	"wordlist.h"
 	"dictionary.h"
-
-1378486281 c:\git\namegen\wordlist.h
-
-1378321684 c:\git\namegen\dictionary.h
-
-1378486586 source:c:\git\namegen\namegen.c
-	<stdio.h>
-	<string.h>
-	<stdlib.h>
-	<time.h>
-	"stringops.h"
-	"wordlist.h"
-	"dictionary.h"
-
-1378486325 source:c:\git\namegen\wordlist.c
-	<stdio.h>
-	<string.h>
-	<stdlib.h>
-	<time.h>
-	"stringops.h"
-	"wordlist.h"
 

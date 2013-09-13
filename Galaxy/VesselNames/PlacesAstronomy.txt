@@ -1,0 +1,23 @@
+//Solar System
+Phobos
+Deimos
+
+//Star systems / constellations
+Pleiades
+Cygnus_Nebula
+Cygnus
+Auriga
+
+// Ursa Major
+Dubhe
+Merak
+Phecda
+Megrez
+Alioth
+Mizar
+Benetnasch
+Polaris
+Alcor	
+Alkaid
+Alhaud
+Muscida

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "stringops.h"
+#define NAMEGEN_BUFFER_SIZE 256
 inline int too_similar(char* a, char* b)
 {
 	int i;
@@ -62,6 +63,7 @@ inline void clean_string_array(char** strings, int* stringCount)
 		    blockCommentStart=blockComment?strings[i]:strstr(strings[i], "/*");
 		    blockCommentEnd=blockCommentStart?strstr(blockCommentStart, "*/"):NULL;
             lineCommentStart=strstr(strings[i], "//");
+
             while (blockCommentStart && blockCommentEnd)
             {
                 blockComment=0;
@@ -70,6 +72,7 @@ inline void clean_string_array(char** strings, int* stringCount)
                 {
                     *blockCommentStart=0;
                     lineCommentStart=NULL;
+                    blockCommentEnd=NULL;
                 }
                 else
                 {
@@ -80,7 +83,7 @@ inline void clean_string_array(char** strings, int* stringCount)
             }
             if (lineCommentStart)
                 *lineCommentStart=0;
-            if ((blockComment=(int)(blockCommentStart=strstr(strings[i], "/*"))))
+            if ((blockComment=(int)(blockCommentStart=blockComment?strings[i]:strstr(strings[i], "/*"))))
                 *blockCommentStart=0;
 		}
 		if (strings[i]==NULL || strings[i][0]==0 /*|| strings[i][0]=='/'*/)
@@ -122,6 +125,60 @@ inline char* file_get_text(char* fileName)
 		fprintf(stderr, "Failed to read contents from [%s]\n", fileName);
 		return NULL;
 	}
+}
+
+inline char* files_get_text(char* fileNames, char* workingDir)
+{
+    char* fileNameBuffer;
+	FILE * sourceFile;
+	char * loadedData;
+	char * writePointer;
+	char** nameArray;
+	int fileCount;
+	size_t totalLength;
+	size_t fileLength;
+	//size_t written;
+	int i;
+
+	totalLength=0;
+    /*fprintf(stderr, "Loading from filenames [%s] in [%s]\n", fileNames, workingDir);*/
+    split_string_DESTRUCTIVE(fileNames, &fileCount, &nameArray, "@");
+    clean_string_array(nameArray, &fileCount);
+
+	fileNameBuffer=(char*)malloc(NAMEGEN_BUFFER_SIZE*sizeof(char));
+
+	for (i=0; i<fileCount; ++i)
+        if ((sourceFile=fopen(get_mod_file_path_2(workingDir,nameArray[i],fileNameBuffer), "rb")))
+        {
+            fseek (sourceFile, 0, SEEK_END);
+            totalLength+=ftell(sourceFile);
+            fclose(sourceFile);
+        }
+	writePointer=loadedData=(char*)calloc(totalLength+fileCount+1,sizeof(char));
+
+	for (i=0; i<fileCount; ++i)
+	{
+	    trim(nameArray[i]);
+        if ((sourceFile=fopen(get_mod_file_path_2(workingDir,nameArray[i],fileNameBuffer), "rb")))
+        {
+            fseek (sourceFile, 0, SEEK_END);
+            fileLength=ftell(sourceFile);
+            fseek (sourceFile, 0, SEEK_SET);
+            writePointer+=fread(writePointer,1,fileLength,sourceFile);
+            *writePointer='\n';
+            writePointer++;
+            fclose(sourceFile);
+        }
+	}
+    free(fileNameBuffer);
+    free(nameArray);
+    return loadedData;
+}
+inline char** files_get_lines(char* fileNames, int* lineCount)
+{
+	char** lines;
+	split_string_DESTRUCTIVE(files_get_text(fileNames,"Galaxy"), lineCount, &lines, "\n");
+	return lines;
 }
 
 inline char** file_get_lines(char* fileName, int* lineCount)

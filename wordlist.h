@@ -8,6 +8,7 @@ struct WORDLIST
 inline struct WORDLIST blank_wordlist();
 inline void init_wordlist(struct WORDLIST* wordlist);
 inline struct WORDLIST load_wordlist(char* fileName);
+inline struct WORDLIST load_wordlist_multi(char* fileNames);
 inline void wordlist_from_string(char* string, struct WORDLIST* wordlist);
 inline int wordlist_too_similar(struct WORDLIST firstWordList, struct WORDLIST secondWordList);
 inline char* random_wordlist_item(struct WORDLIST wordList);

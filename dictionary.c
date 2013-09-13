@@ -54,6 +54,12 @@ inline void dictionary_from_file(char* fileName, struct DICTIONARY* targetDictio
 	dictionary_from_wordlist(wordList,targetDictionary);
 }
 
+inline void dictionary_from_files(char* fileNames, struct DICTIONARY* targetDictionary)
+{
+	struct WORDLIST wordList=load_wordlist_multi(fileNames);
+	dictionary_from_wordlist(wordList,targetDictionary);
+}
+
 inline void free_dictionary(struct DICTIONARY* dictionary)
 {
 	if((*dictionary).dataStart!=0) 		free((*dictionary).dataStart);

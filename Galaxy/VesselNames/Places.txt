@@ -9,29 +9,9 @@ the_Stars
 Nazara
 Sirius
 
-//Solar System
-Phobos
-Deimos
-
 //Public Domain
 Pandemonium
 Nostromo
-
-//Norse
-Hel Helheim
-Yggdrasil
-Muspelheim
-Nidavellir
-Niflheim Niflhel
-
-//Greek
-Tartarus
-Hades
-Cocytus
-Acheron
-Styx
-Phlegeton
-Lethe
 
 //Christian
 Purgatory
@@ -43,6 +23,9 @@ Sheol
 //Middle-Eastern
 Irem
 
+//Chinese
+Meiou
+
 //Japanese
 Yomi
 Yami
@@ -51,35 +34,6 @@ Yami
 Dis
 Inferno
 Malebolge
-
-//Star systems / constellations
-Pleiades
-Cygnus_Nebula
-Cygnus
-Auriga
-
-// Ursa Major
-Dubhe
-Merak
-Phecda
-Megrez
-Alioth
-Mizar
-Benetnasch
-Polaris
-Alcor	
-Alkaid
-Alhaud
-Muscida
-
-//Cthulhu Mythos
-R'Lyeh
-Leng
-Kadath
-Yith
-Yuggoth
-Ulthar
-K'n-yan
 
 //Easter egg
 the_Frigg
