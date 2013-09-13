@@ -345,30 +345,31 @@ unpacking, reading or copying.
   7. Additional Terms.
 
   Teardown (at the time of writing represented by Michal Gawlas, Niklas 
-Astrand and Jorgen Nilsson) is granted an exception from the
+Astrand and Jorgen Nilsson among others) is granted an exception from the
 terms of this license that overrides the restrictions on conveying 
-source forms or compiled object code expressed in sections 5 and 6 of 
+source forms and compiled object code expressed in sections 5 and 6 of 
 this document:
 
     a) They are permitted to convey object code without being required 
-	to convey the source code in any form (or promise such), and are not
-	required to license works maing use of this product under any version
-	of GPL if they so choose.
-	
-	b) They are permitted to control the redistribution rights to any 
-	derivative or dependent works, including adding restrictions to limit
-	or prevent redistribution by third parties if they so choose.
+    to convey the source code in any form (or promise such), and are not
+    required to license their works making use of this product under any 
+    version of GPL unless they so choose.
+
+    b) They are permitted to control the redistribution rights to any 
+    derivative or dependent works they produce, including adding 
+    restrictions to limit or prevent redistribution by third parties 
+    if they so choose.
 
 Additionally:
 
-	c) They are given permission to sublicense this product in any form 
-	(modified or not), and any dependent or derivative works to third 
-	parties and extend the exceptions in points a) and/or b) to those third 
-	parties if they choose to do so.
+    c) They are given permission to sublicense this product in any form 
+    (modified or not), and any dependent or derivative works to third 
+    parties and extend the exceptions in points a) and/or b) to those third 
+    parties if they choose to do so.
 
-	d) They may extend permission in point c) to grant further such sublicenses
-	to those third parties if they choose to do so. Such a permission must be
-	explicitly stated and may never be considered implicit.
+    d) They may extend permission in point c) to grant further such sublicenses
+    to those third parties if they choose to do so. Such a permission must be
+    explicitly stated and may never be considered implicit.
 
   8. Termination.
 
