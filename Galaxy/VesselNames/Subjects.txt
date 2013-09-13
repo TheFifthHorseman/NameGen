@@ -22,7 +22,8 @@ Device Agent System Construct Construction Motor
 Lair Nest Hive Pit Den Well
 Storm Hurricane Fury Malice Rage Wrath
 Defilement Defiler Contagion Plague Pandemic Sickness
-Harvest Harvester /*Crop*/
+Harvest Harvester Reaper/*Crop*/
+Reaper
 Chaos Strife Entropy Anarchy Feud
 Murderer Slayer Slaughterer Ravager Butcher
 Death Fate Damnation Doom Destiny End Fortune Misfortune Order Fall Mire Oblivion Annihilation Ragnarok
@@ -40,7 +41,7 @@ Thorn Spike Fang Claw
 Eye /*Lens*/ Feeler
 Tendril Hand Limb Tentacle Head Skull Shell Husk Mandible Jaws Teeth Maw Fist Gullet Appendage Mouth
 Shell Husk Cocoon Chrysalis Hulk
-Ash Dust Flames Cinders
+Ash Dust Flame Cinders
 Heart Core Center Matrix Focus
 Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Corona

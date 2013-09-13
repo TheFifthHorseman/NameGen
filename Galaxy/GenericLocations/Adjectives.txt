@@ -21,7 +21,7 @@ Undead Unliving Undying Zombie Revenant
 Charnel Dead Falling Fallen Dying Rotting Decaying Death
 Killing Killer Murdering Murder Murderous
 Cold Frozen Freezing Icy
-Pestilent Foul Virulent Diseased Cancerous
+Pestilent Foul Virulent Diseased Cancerous Festering
 Chained Caged Prison Sealed Imprisoned Isolated
 Lurking Shrouded Hidden Concealed
 First Final Last

@@ -3,7 +3,10 @@
     + Decompose the core namegen!
     + Fix the mess with hardcoded mod paths!
     + Namegen should be called with the path as an argument!
+    + Merging dictionaries
+    + Loading auxiliary wordlists when loading wordlist from file
     + Support / as directory separator (Unix, Linux, Mac)
+    + BST??
     + Namegen validator
 */
 #include <stdio.h>

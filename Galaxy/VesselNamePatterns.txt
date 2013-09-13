@@ -21,8 +21,8 @@ The $W $S $L
 The $W $S $L
 //The $A $W $S $L
 $A $W $S $L
-$T$A $B $X
-$T$A $B $X
+//$T$A $B $X
+//$T$A $B $X
 $T$A $X of $Y
 $T$A $X of $Y
 $T$X of $B $Y
@@ -58,4 +58,9 @@ $X of the $B Race
 //$T$X of the $B Race
 $A $W of $B Race
 The $A Race
-$X of the $A
+$T$X of the $y
+$T$X of the $y
+$T$A $W of the $y
+$T$A $W of the $y
+$T$W of the $y
+$T$W of the $y

@@ -1,5 +1,5 @@
-the_Dead
-the_Titans
+//the_Dead
+//the_Titans
 Chaos Disorder  Anarchy Entropy Madness
 Storms Thunder Strife
 War Battle Feuds Havoc Fury Malice Rage Wrath Savagery Genocide
@@ -7,7 +7,7 @@ Plague Contagion
 Harvests
 Calamity Misfortune Fate Death Omens Prophets Ends Endings
 Ancients
-Ages Eternity Millenia Time
+Aeons Ages Eternity Millenia Time
 Horrors Abominations Monsters Horror Terror Nightmares
 Agony Pain Torment Torture Tears Woe
 Despair Sorrow Grief Torment Anguish Lament Tears
@@ -26,5 +26,9 @@ Horizons
 Staves Pentacles Swords /*Wands*/ Grails Arrows Lances
 Magicians Emperors Chariots Hermits Wheels Fortunes Justice Death Temperance Devil Tower Stars Moon Moons Sun Suns Judgement World Worlds /*Fool*/ Fools
 Arcana Mysteries Secrets Enigmas Enigma
-Ruin Ruins Ash Dust
+Ruin Ruins Ash Dust Flames
 Witches
+Insects Spiders
+Worms Larvae Grubs Maggots
+Worms
+Husks Corpses

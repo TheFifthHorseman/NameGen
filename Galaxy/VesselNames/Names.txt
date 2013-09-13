@@ -5,6 +5,7 @@ Cybele
 Cain
 Judas Iscariot
 Abaddon
+Satan
 
 // Greek
 Hades

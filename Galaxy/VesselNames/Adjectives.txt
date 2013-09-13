@@ -4,17 +4,17 @@ Baleful Ominous Wretched Suffering
 Dark Tenebrous Shadowy Shadowed Gloomy
 Summoning Calling Summoned
 Sentient
-Rocky Granite Basalt
-Soundless Silent Noiseless Screaming Howling Ululating
+Soundless Silent Noiseless
+Silent Screaming Howling Ululating Roaring Chittering
 Fading Grey Faded
-Haunted Grim Dead Undead Unliving Undying Dying Fallen Morbid Rotting
+Haunted Grim Dead Undead Unliving Undying Dying Fallen Morbid Rotting Revenant Ghastly
 Cold Frozen Freezing
-Pestilent Contagious Infectious Foul Bloated Virulent Diseased Cancerous Sickly
+Pestilent Contagious Infectious Foul Bloated Virulent Diseased Cancerous Sickly Festering
 Lurking Shrouded Hidden
 First Final Last Ultimate
 Unrestrained Unbound Boundless Unshackled Unchained Limitless Unlimited Chained Sealed Imprisoned
 Black Crimson Red Scarlet Iridescent Purple Grey Lambent Yellow Cerulean Viridian
-Luminous Radiant Lambent Star
+Luminous Radiating Lambent Star
 Living Breathing Beating
 Writhing Pulsating Undulating
 Bitter Vengeful
@@ -31,7 +31,7 @@ Horrifying Terrifying Horrific Nightmarish
 Inexplicable Mysterious Impossible Unfathomable Incalculable Unpredictable
 Glass Indestructible Unbreakable Sundered Pierced Wounded Strangled Drowned Ruined Severed Shattered Broken Destroyed Wretched Twisted Warped Mutant Mutated Transformed
 Untamed Unceasing Unstoppable Defiant Enduring
-Vile Dark Evil Corrupt Corrupted Malign Malignant
+Vile Dark Evil Wicked Corrupt Corrupted Malign Malignant
 Blind Blinding Eyeless Many-Eyed Sightless All-Seeing
 Bloody Brutal Bleeding
 Thunderous
@@ -39,19 +39,24 @@ Burning Fiery Incandescent
 Glorious Resplendent Gilded
 Smooth Ideal Perfect Symmetric
 Banished Cryptic Forgotten Hidden Spectral Lost Secret
-Devouring Hungry Empty Gnawing
+Consuming Devouring Hungry Empty Gnawing
 Patient Silent Lone Solitary
 Crystal
 Demonic Hellish Infernal Unholy Unhallowed Blasphemous
 Soaring Swift Drifting Slow
 Frozen Dreaming Sleeping Hibernating Waiting Slumbering Restless Dreamless
-Stone Fossilized
+Stone Petrified Fossilized Granite Basalt
 Hanged Hanging High
 Rending Reaping Sundering Destroying Annihilating Piercing Shattering Severing Strangling Drowning
-Twisting Warping Mutating Shifting Transforming
+Twisting Warping Mutating Shifting Transforming Solid
+Solid Ghostly Phantom
 Circling Rolling /*Spinning Rotating*/
 Sorrowful
 Legendary
 Whispered Whispering
 Angled Many-Angled Angular Triangular
 Pyramidal
+Insectile Spidery Arachnid Crustacean
+Warring Warrior Militant Bellicose Belligerent
+Bone Bony Calcified
+Weaponized

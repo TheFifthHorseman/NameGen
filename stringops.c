@@ -8,7 +8,7 @@ inline int too_similar(char* a, char* b)
 	int i;
 	if (a==b) return 1;
 	if(!a || !b) return 0;
-	for (i=0; i<4; ++i)
+	for (i=0; i<3; ++i)
 		if (*a!=*b) return 0;
 		else if (*(a++)==0 || *(b++)==0) return 1;
 	return 1;

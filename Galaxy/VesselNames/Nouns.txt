@@ -6,6 +6,7 @@ Harbinger Herald Vanguard Apostle
 Judgement Nemesis
 Abomination Monster Monstrosity Nightmare Horror Terror Beast Creature Thing
 Anomaly
+Aeon
 Prison /*Cell*/ Cage
 Bastard Scion Son Spawn Get Progeny Child
 Voyager Traveller
@@ -24,6 +25,7 @@ Sentinel Sentry Guardian Watcher Knight Rook Bishop Templar Paladin Warrior Mara
 Bishop God Lord Lady Idol Ruler Tyrant Master Emperor Imperator Empress Queen King Imperatrix General
 Seeker Hunter Hound
 Thorn Spike Fang Claw
+Reaper
 Razor Reaper Blade Edge Severance Reaver Harvester
 Murderer Slayer Slaughterer Ravager Butcher
 Dead Dead Dead Undead
@@ -39,7 +41,7 @@ Cult Cabal Cultist Order
 Order Command Decree Law
 Druid
 Engine Machine Device
-Shell Husk Cocoon Chrysalis
+Shell Husk Cocoon Chrysalis Carcass
 Fog
 Future
 Skull Grave Shroud Pyre Blood Bone Spine
@@ -62,11 +64,13 @@ Whisper Whisperer Speaker
 Horizon Reach Limit
 Heart Core Center Meridian Focus
 Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
+Devil Demon Djinn Ifrit Efreet
 Chalice Grail Vessel
 Ship Craft Carrier Drakkar
 Arcanum Arcana Mystery Secret Enigma Question
 Jaw Maw Mouth Jaws Gullet
 Legend Saga
 Widow
-Contract Agenda Deal
+Contract Agenda
 Fire Blaze Ash Cinder
+Worm Grub Maggot Larva
