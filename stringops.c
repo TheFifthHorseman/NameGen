@@ -4,6 +4,7 @@
 #include <time.h>
 #include "stringops.h"
 #define NAMEGEN_BUFFER_SIZE 256
+/*
 inline int too_similar(char* a, char* b)
 {
 	int i;
@@ -14,6 +15,7 @@ inline int too_similar(char* a, char* b)
 		else if (*(a++)==0 || *(b++)==0) return 1;
 	return 1;
 }
+*/
 
 inline int count_character_occurences(char *string, char *charsToCount)
 {
@@ -110,6 +112,11 @@ inline char* file_get_text(char* fileName)
 	FILE * sourceFile;
 	char * loadedData;
 	size_t fileLength;
+	int i;
+    for (i=0; fileName[i]; ++i)
+    if (fileName[i]=='\\')
+        fileName[i]='/';
+
 	if ((sourceFile=fopen(fileName, "rb")))
 	{
 		fseek (sourceFile, 0, SEEK_END);
@@ -137,15 +144,16 @@ inline char* files_get_text(char* fileNames, char* workingDir)
 	int fileCount;
 	size_t totalLength;
 	size_t fileLength;
-	//size_t written;
 	int i;
 
 	totalLength=0;
-    /*fprintf(stderr, "Loading from filenames [%s] in [%s]\n", fileNames, workingDir);*/
     split_string_DESTRUCTIVE(fileNames, &fileCount, &nameArray, "@");
     clean_string_array(nameArray, &fileCount);
 
 	fileNameBuffer=(char*)malloc(NAMEGEN_BUFFER_SIZE*sizeof(char));
+    for (i=0; fileNames[i]; ++i)
+        if (fileNames[i]=='\\')
+            fileNames[i]='/';
 
 	for (i=0; i<fileCount; ++i)
         if ((sourceFile=fopen(get_mod_file_path_2(workingDir,nameArray[i],fileNameBuffer), "rb")))
@@ -169,6 +177,8 @@ inline char* files_get_text(char* fileNames, char* workingDir)
             writePointer++;
             fclose(sourceFile);
         }
+        else
+            fprintf(stderr, "Failed to read contents from [%s]\n", nameArray[i]);
 	}
     free(fileNameBuffer);
     free(nameArray);

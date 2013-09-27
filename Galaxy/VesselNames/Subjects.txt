@@ -17,10 +17,11 @@ Legacy Heir Inheritor Finale
 Loom Weave Web Strand Chain Lattice Weaver
 Rack Manacle Noose 
 Tribe Kindred
-Engine
-Device Agent System Construct Construction Motor
+Engine Device Construct
+Agent System Construct Construction
 Lair Nest Hive Pit Den Well
-Storm Hurricane Fury Malice Rage Wrath
+Storm Hurricane Fury Malice Rage Wrath Hate Spite
+Hate Spite
 Defilement Defiler Contagion Plague Pandemic Sickness
 Harvest Harvester Reaper/*Crop*/
 Reaper
@@ -31,7 +32,7 @@ Harbinger Herald Omen Prophet Portent Messenger Bringer Vanguard Apostle Prophec
 Judge Judgement Nemesis Sentence Enemy Justice Vengeance Avenger
 Seeker Pilgrim Hunter Hound Traveller Huntsman
 Despoiler Predator Plunderer Ravager
-Sentinel Sentry Guardian Watcher Knight Rook Templar Paladin Warrior Marauder Berserker
+Vigil Vigilance Sentinel Sentry Guardian Watcher Knight Rook Templar Paladin Warrior Marauder Berserker
 Bishop Vicar Cleric
 Soul Haunter Spirit Ghost Wraith Specter Apparition Phantom Ghoul Eidolon Revenant
 Prisoner Servant Slave Worshipper Follower Agent
@@ -52,3 +53,5 @@ Legion Cohort Army
 Speaker Whisper Whisperer
 Contract Agenda Deal
 Witch
+Poison Venom Toxin Radiation Radiance Glow
+Anathema Nemesis Antithesis

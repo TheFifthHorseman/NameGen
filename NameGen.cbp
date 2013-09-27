@@ -61,6 +61,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="namegen.h" />
+		<Unit filename="string_fingerprint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="string_fingerprint.h" />
 		<Unit filename="stringops.c">
 			<Option compilerVar="CC" />
 		</Unit>

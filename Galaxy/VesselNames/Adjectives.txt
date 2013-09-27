@@ -31,7 +31,7 @@ Horrifying Terrifying Horrific Nightmarish
 Inexplicable Mysterious Impossible Unfathomable Incalculable Unpredictable
 Glass Indestructible Unbreakable Sundered Pierced Wounded Strangled Drowned Ruined Severed Shattered Broken Destroyed Wretched Twisted Warped Mutant Mutated Transformed
 Untamed Unceasing Unstoppable Defiant Enduring
-Vile Dark Evil Wicked Corrupt Corrupted Malign Malignant
+Vile Dark Evil Wicked Corrupt Corrupted Malign Malignant Odious
 Blind Blinding Eyeless Many-Eyed Sightless All-Seeing
 Bloody Brutal Bleeding
 Thunderous
@@ -58,5 +58,10 @@ Angled Many-Angled Angular Triangular
 Pyramidal
 Insectile Spidery Arachnid Crustacean
 Warring Warrior Militant Bellicose Belligerent
-Bone Bony Calcified
+Bone Bony Boneless Calcified
 Weaponized
+Poisonous Toxic Radioactive Venomous Noxious
+Venomous Vicious Hateful
+Pernicious Attery
+Vitreous
+Stalking Skulking Watchful Vigilant

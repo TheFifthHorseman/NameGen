@@ -20,6 +20,9 @@ Claw
 Star
 Demon
 Hyperion
+Manticore
+Wyvern
+Sphinx
 Succubus Incubus
 Cockatrice Basilisk
 Hobgoblin Goblin Gremlin
@@ -71,6 +74,12 @@ Yith
 Yuggoth
 Arkham
 Miskatonic
+
+R'Lyeh
+Leng
+Kadath
+Ulthar
+K'n-yan
 
 // Ursa Major
 Dubhe Merak Phecda Megrez Alioth Mizar Benetnasch Polaris

@@ -45,7 +45,7 @@ inline void wordlist_from_string(char* string, struct WORDLIST* wordlist)
 	split_string_DESTRUCTIVE(string, &(*wordlist).entryCount, &(*wordlist).entryList, (char*)WhiteSpace);
 	clean_string_array((*wordlist).entryList, &(*wordlist).entryCount);
 }
-
+/* Deprecated. Rewrite using fingerprints?
 inline int wordlist_too_similar(struct WORDLIST firstWordList, struct WORDLIST secondWordList)
 {
 	int i, j;
@@ -56,7 +56,7 @@ inline int wordlist_too_similar(struct WORDLIST firstWordList, struct WORDLIST s
 					return 1;
 	return 0;
 }
-
+*/
 inline char* random_wordlist_item(struct WORDLIST wordList)
 {
 	return random_string(wordList.entryList, wordList.entryCount);

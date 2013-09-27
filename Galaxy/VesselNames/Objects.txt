@@ -2,7 +2,7 @@
 //the_Titans
 Chaos Disorder  Anarchy Entropy Madness
 Storms Thunder Strife
-War Battle Feuds Havoc Fury Malice Rage Wrath Savagery Genocide
+Spite Hate Hatred War Battle Feuds Havoc Fury Malice Rage Wrath Savagery Genocide
 Plague Contagion
 Harvests
 Calamity Misfortune Fate Death Omens Prophets Ends Endings
@@ -26,9 +26,9 @@ Horizons
 Staves Pentacles Swords /*Wands*/ Grails Arrows Lances
 Magicians Emperors Chariots Hermits Wheels Fortunes Justice Death Temperance Devil Tower Stars Moon Moons Sun Suns Judgement World Worlds /*Fool*/ Fools
 Arcana Mysteries Secrets Enigmas Enigma
-Ruin Ruins Ash Dust Flames
+Ruin Ash Dust Flames
 Witches
 Insects Spiders
-Worms Larvae Grubs Maggots
+Worms Larvae Grubs Maggots Vermin
 Worms
 Husks Corpses

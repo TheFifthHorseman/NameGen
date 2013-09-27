@@ -2,10 +2,12 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 #include "stringops.h"
 #include "wordlist.h"
 #include "dictionary.h"
 #include "namegen.h"
+#include "string_fingerprint.h"
 /* Buffer size for file names and output string. Should be larger than maximum expected length of either of these. */
 #define NAMEGEN_BUFFER_SIZE 256
 /* How many times to retry generation if:
@@ -19,6 +21,12 @@
 /* #define MAXIMUM_TOKEN_DEPTH MAXIMUM_RETRIES */
 #define MAXIMUM_TOKEN_DEPTH 5
 
+char* hashMapping=NULL;
+char* hashExists=NULL;
+int hashTableSize=0;
+int hashLength=0;
+char bitPos[8]={ '\x01','\x02','\x04','\x08','\x10','\x20','\x40','\x80',  };
+int maxHash=0;
 static inline void load_manifest_entry (char* manifestEntry, struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices)
 {
     int j;
@@ -69,15 +77,41 @@ static inline void dictionary_init(unsigned int maximumOutputLength, char* manif
 static inline void get_non_colliding_wordlist(struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices, int i)
 {
     int j, redo, retries=MAXIMUM_RETRIES;
+    int* hashes;
+    int hashCount;
+    int t;
     if (dictionaries[i].entryCount>0 && strchr(hardcodedWordListIndices,i)==NULL)
+    {
+        for (j=hashCount=0; j<dictionaries[i].entryCount;++j)
+            if (dictionaries[i].entryList[j].entryCount>hashCount)
+                hashCount=dictionaries[i].entryList[j].entryCount;
+        hashes=(int*)calloc(sizeof(int)*hashCount, 1);
+
         do
         {
+            redo=0;
             wordListChoices[i]=random_dictionary_item(dictionaries[i]);
-            for (j=redo=0; j<256 && !redo; ++j)
-                if(j!=i && wordListChoices[j].entryCount>0 && strchr(hardcodedWordListIndices,j)==NULL)
-                    if (wordlist_too_similar(wordListChoices[i], wordListChoices[j]))
-                        redo=1;
+            memset(hashes,0,sizeof(int)*hashCount);
+            for (j=0; j<wordListChoices[i].entryCount && !redo; ++j)
+            {
+                t=string_fingerprint(wordListChoices[i].entryList[j], hashMapping, hashLength);
+                if ((hashExists[t>>3])&(bitPos[t%7]))
+                    redo=1;
+                hashes[j]=t;
+            }
         } while (redo && --retries);
+        /* if the selection ended up failing retries, fill in the missing hashes */
+        if (!redo)
+            for (j=0; j<wordListChoices[i].entryCount; ++j)
+                hashes[j]=string_fingerprint(wordListChoices[i].entryList[j], hashMapping, hashLength);
+        /* add the hashes to the existence array */
+        for (j=0; j<wordListChoices[i].entryCount; ++j)
+        {
+            t=hashes[j];
+            hashExists[t>>3]|=bitPos[t&7];
+        }
+        free(hashes);
+    }
 }
 
 static inline void namegen_cleanup(char* appendPointer, char* fileNameBuffer, struct DICTIONARY* dictionaries, struct WORDLIST* patterns, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices)
@@ -92,6 +126,9 @@ static inline void namegen_cleanup(char* appendPointer, char* fileNameBuffer, st
 		if (wordListChoices[j=hardcodedWordListIndices[i]].entryCount)
 			free_wordlist(wordListChoices+j);
 	free(hardcodedWordListIndices);
+    free(hashMapping);
+    free(hashExists);
+    hashExists=hashMapping=NULL;
 }
 
 static inline void substitute_tokens(char* patternPosition, char* resultString, struct DICTIONARY* dictionaries, struct WORDLIST* wordListChoices, char* hardcodedWordListIndices)
@@ -126,6 +163,7 @@ static inline void grammar_produce (struct DICTIONARY* dictionaries, struct WORD
     fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
     patternPosition=(char*)memcpy((void*)fileNameBuffer, (void*)selectedPattern, sizeof(char)*NAMEGEN_BUFFER_SIZE);
     tokenLoops=MAXIMUM_TOKEN_DEPTH;
+    memset(hashExists,0x00,hashTableSize);
     do
     {
         for (i=0;i<256; ++i)
@@ -140,6 +178,14 @@ static inline void grammar_produce (struct DICTIONARY* dictionaries, struct WORD
     free (fileNameBuffer);
 }
 
+void init_hash_tables()
+{
+   	hashMapping=get_5bit_hash_table();
+	hashLength=get_hash_bits((unsigned char*)hashMapping);
+	hashTableSize=pow(2,hashLength*3-3);
+    hashExists=(char*)calloc(hashTableSize,1);
+}
+
 char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char* patternFile)
 {
 	int patternRetries, j;
@@ -152,6 +198,7 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
         fprintf(stderr, "Failed namegen: Impossible to produce a valid %d char output\n", maximumOutputLength);
         return (char*) calloc(1,1);
 	}
+    init_hash_tables();
 	dictionary_init(maximumOutputLength, manifestFile, &dictionaries[0], &wordListChoices[0], &hardcodedWordListIndices);
     fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
 	resultString=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);

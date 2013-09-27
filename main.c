@@ -1,13 +1,18 @@
 /*
     TODO:
-    + Decompose the core namegen!
     + Fix the mess with hardcoded mod paths!
     + Namegen should be called with the path as an argument!
-    + Merging dictionaries
-    + Loading auxiliary wordlists when loading wordlist from file
-    + Support / as directory separator (Unix, Linux, Mac)
     + BST??
     + Namegen validator
+    + Increase buffer length!!! 256 = high risk of overflow. 16k?
+
+    Dictionary TODOs:
+    + Deverbal nouns
+    + Verbs
+    + Verbal Adjectives
+    + The $X that <Verb>
+    + Add some words specially for the "X: The Y" patterns!
+    + Added Alliterative Appeal?
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,6 +26,7 @@ int main(int argc, char** argv)
 {
     unsigned int i, columns, j, lines;
     int padding;
+//    time_t start;
     char*result;
     FILE* genlog=NULL;
     srand(time(NULL));
@@ -44,10 +50,11 @@ int main(int argc, char** argv)
     if (columns>1)
         padding/=columns-1;
    /*
-    for (i=0; i<1; ++i)
+    start=time(NULL);
+    for (i=0; i<10000; ++i)
     {
         result=ship_alien_name();
-        printf("%s\n", result);
+     //   printf("%s\n", result);
         free(result);
     }
 /*/
@@ -70,6 +77,7 @@ int main(int argc, char** argv)
         }
     }
     //*/
+//    printf("\n%d seconds\n", time(NULL)-start);
 	return 0;
 }
 

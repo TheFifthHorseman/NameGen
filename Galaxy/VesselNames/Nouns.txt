@@ -21,13 +21,14 @@ Voyager
 Chaos Strife Entropy Anarchy
 Death Fate Damnation Doom Destiny End Fortune Misfortune Order Fall Mire Oblivion Annihilation
 Defiler Contagion Plague Pandemic Calamity Disease
-Sentinel Sentry Guardian Watcher Knight Rook Bishop Templar Paladin Warrior Marauder Berserker
+Vigil Vigilance Watch Sentinel Sentry Guardian Watcher Knight Rook Bishop Templar Paladin Warrior Marauder Berserker
 Bishop God Lord Lady Idol Ruler Tyrant Master Emperor Imperator Empress Queen King Imperatrix General
 Seeker Hunter Hound
 Thorn Spike Fang Claw
 Reaper
 Razor Reaper Blade Edge Severance Reaver Harvester
 Murderer Slayer Slaughterer Ravager Butcher
+Murder Slaughter Ravage Butchery Murder 
 Dead Dead Dead Undead
 Specter Haunter Shadow Wraith
 Watcher Sentinel Guardian
@@ -58,15 +59,16 @@ Circle
 Scepter
 Smoke
 Threat Enemy Foe
-Stallion Steed Rider
+Stallion Steed Rider Chariot
 Vanguard
 Whisper Whisperer Speaker
 Horizon Reach Limit
 Heart Core Center Meridian Focus
 Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Devil Demon Djinn Ifrit Efreet
-Chalice Grail Vessel
-Ship Craft Carrier Drakkar
+Chalice Grail Vessel 
+Chariot
+Ship Craft Carrier Drakkar Chariot
 Arcanum Arcana Mystery Secret Enigma Question
 Jaw Maw Mouth Jaws Gullet
 Legend Saga

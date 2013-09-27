@@ -1,3 +1,10 @@
+//$X: $X
+The $X That Is $A
+That Which Is $A
+$X: The $X
+$X: The $g
+$X: The $A
+//$X: $A
 $X $S $G
 $W $S $G
 $X $S $G
