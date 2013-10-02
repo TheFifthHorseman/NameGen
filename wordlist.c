@@ -5,7 +5,7 @@
 #include "stringops.h"
 #include "wordlist.h"
 
-inline struct WORDLIST blank_wordlist()
+struct WORDLIST blank_wordlist()
 {
 	struct WORDLIST returnValue;
 	returnValue.entryCount=0;
@@ -14,14 +14,14 @@ inline struct WORDLIST blank_wordlist()
 	return returnValue;
 }
 
-inline void init_wordlist(struct WORDLIST* wordlist)
+void init_wordlist(struct WORDLIST* wordlist)
 {
 	(*wordlist).entryCount=0;
 	(*wordlist).dataStart=0;
 	(*wordlist).entryList=0;
 }
 
-inline struct WORDLIST load_wordlist(char* fileName)
+struct WORDLIST load_wordlist(char* fileName)
 {
     struct WORDLIST wordlist;
 	wordlist.entryList=file_get_lines(fileName, &(wordlist.entryCount));
@@ -30,7 +30,7 @@ inline struct WORDLIST load_wordlist(char* fileName)
 	return wordlist;
 }
 
-inline struct WORDLIST load_wordlist_multi(char* fileNames)
+struct WORDLIST load_wordlist_multi(char* fileNames)
 {
 	struct WORDLIST wordlist;
 	wordlist.entryList=files_get_lines(fileNames, &(wordlist.entryCount));
@@ -39,14 +39,14 @@ inline struct WORDLIST load_wordlist_multi(char* fileNames)
 	return wordlist;
 }
 
-inline void wordlist_from_string(char* string, struct WORDLIST* wordlist)
+void wordlist_from_string(char* string, struct WORDLIST* wordlist)
 {
 	(*wordlist).dataStart=string;
 	split_string_DESTRUCTIVE(string, &(*wordlist).entryCount, &(*wordlist).entryList, (char*)WhiteSpace);
 	clean_string_array((*wordlist).entryList, &(*wordlist).entryCount);
 }
 /* Deprecated. Rewrite using fingerprints?
-inline int wordlist_too_similar(struct WORDLIST firstWordList, struct WORDLIST secondWordList)
+int wordlist_too_similar(struct WORDLIST firstWordList, struct WORDLIST secondWordList)
 {
 	int i, j;
 	for (i=0; i<firstWordList.entryCount; ++i)
@@ -57,23 +57,23 @@ inline int wordlist_too_similar(struct WORDLIST firstWordList, struct WORDLIST s
 	return 0;
 }
 */
-inline char* random_wordlist_item(struct WORDLIST wordList)
+char* random_wordlist_item(struct WORDLIST wordList)
 {
 	return random_string(wordList.entryList, wordList.entryCount);
 }
 
-inline void free_wordlist(struct WORDLIST *wordList)
+void free_wordlist(struct WORDLIST *wordList)
 {
 	if((*wordList).dataStart)	free((*wordList).dataStart);
 	if((*wordList).entryList)	free((*wordList).entryList);
 }
 
-inline void remove_wordlist_item(struct WORDLIST *wordList, int i)
+void remove_wordlist_item(struct WORDLIST *wordList, int i)
 {
     (*wordList).entryList[i]=(*wordList).entryList[--(*wordList).entryCount];
 }
 
-inline void prune_long_wordlist_entries(struct WORDLIST *wordList, unsigned int truncateTo)
+void prune_long_wordlist_entries(struct WORDLIST *wordList, unsigned int truncateTo)
 {
     int i;
     for (i=0; i<(*wordList).entryCount; ++i)
@@ -81,7 +81,7 @@ inline void prune_long_wordlist_entries(struct WORDLIST *wordList, unsigned int 
             remove_wordlist_item(wordList, i--);
 }
 
-inline void remove_entry(struct WORDLIST *wordList, char* entry)
+void remove_entry(struct WORDLIST *wordList, char* entry)
 {
     int i;
     for (i=0; i<(*wordList).entryCount; ++i)
@@ -92,11 +92,11 @@ inline void remove_entry(struct WORDLIST *wordList, char* entry)
         }
 }
 
-inline void load_hardcoded_list(char* source, struct WORDLIST* wordList)
+void load_hardcoded_list(char* source, struct WORDLIST* wordList)
 {
     int k;
-    wordlist_from_string(source, wordList);
-    (*wordList).dataStart=NULL;
+    wordlist_from_string(_strdup(source), wordList);
+/*    (*wordList).dataStart=NULL;*/
     for (k=0; k< (*wordList).entryCount; ++k)
         if (!memcmp ( (*wordList).entryList[k], "_", 2))
             (*wordList).entryList[k][0]=0;

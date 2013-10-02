@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "mod.h"
-inline char* get_mod_file_path(char* fileName, char* fileNameBuffer)
+char* get_mod_file_path(char* fileName, char* fileNameBuffer)
 {
     if (ActiveMod)
         sprintf(fileNameBuffer, "Mods\\%s\\%s", ActiveMod, fileName);
@@ -8,7 +8,7 @@ inline char* get_mod_file_path(char* fileName, char* fileNameBuffer)
         sprintf(fileNameBuffer, "%s", fileName);
 	return fileNameBuffer;
 }
-inline char* get_mod_file_path_2(char* subDir, char* fileName, char* fileNameBuffer)
+char* get_mod_file_path_2(char* subDir, char* fileName, char* fileNameBuffer)
 {
     if (ActiveMod)
         sprintf(fileNameBuffer, "Mods\\%s\\%s\\%s", ActiveMod, subDir, fileName);

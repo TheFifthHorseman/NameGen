@@ -14,7 +14,7 @@ Despair Sorrow Grief Torment Anguish Lament Tears
 Thorns Spikes Blades Severance Claws Horns Spires Bones Teeth Jaws Maws Skulls
 Hands Tentacles Limbs Tendrils Fists Appendages
 Eyes
-Legions Cohorts
+Legions Armies /*Cohorts*/
 Death Fates Damnation Doom Destinies Endings Misfortune Events Honor
 Lords Kings Gods Tyrants Precursors
 Travellers Voyagers Journeys

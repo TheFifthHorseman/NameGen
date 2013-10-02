@@ -26,20 +26,18 @@ int main(int argc, char** argv)
 {
     unsigned int i, columns, j, lines;
     int padding;
-//    time_t start;
     char*result;
+    int NameLength=NAMEGEN_AA2_MAX_LENGTH;
     FILE* genlog=NULL;
+    /*
+    srand((unsigned int)21843769);
+    srand(214783659);
+    */
     srand(time(NULL));
     genlog=fopen("names.log", "a");
     freopen( "stderr.log", "w", stderr );
     /*ActiveMod="AlienAssault2";*/
     lines=59;
-    /* 23 chars printable plus null-terminator; */
-    /* Sweet spot between short and boringly long names. */
-    /* Note: The program WILL crash on v. low lengths - in test data, anything below 15 chars. Probably because that's shorter than most patterns are. */
-/*    NameLength=15; */
-/*    NameLength=19; */
-    NameLength=24;
 
     i=0;
     if (argc>1) sscanf(argv[1], "%ud", &i);
@@ -49,15 +47,27 @@ int main(int argc, char** argv)
     columns=80/(NameLength+1);
     if (columns>1)
         padding/=columns-1;
-   /*
-    start=time(NULL);
+    /*mem_log_out=stderr;*/
+
+/*
+    //start=time(NULL);
     for (i=0; i<10000; ++i)
     {
         result=ship_alien_name();
-     //   printf("%s\n", result);
+//		printf("%d ", i);
+//        printf("%d %s\n", i,result);
         free(result);
+//		mem_log(manager_struct, stderr);
+//		fflush(stderr);
     }
-/*/
+//*/
+/*
+    result=ship_alien_name();
+    //printf("%s%*s", result, NameLength-strlen(result)+padding,"");
+ //   if (genlog) fprintf(genlog, "%s%*s", result, NameLength-strlen(result)+padding,"");
+    free(result);
+ /*/
+/**/
     for (i=0;i<lines;++i)
     {
         for (j=0; j<columns; j++)
@@ -76,8 +86,10 @@ int main(int argc, char** argv)
             free(result);
         }
     }
-    //*/
-//    printf("\n%d seconds\n", time(NULL)-start);
+/**/
+/*    mem_log(manager_struct, stderr);
+	mem_log(manager_struct, stdout); */
+/*	system("PAUSE");*/
 	return 0;
 }
 

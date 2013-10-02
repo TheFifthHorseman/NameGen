@@ -39,7 +39,7 @@ Burning Fiery Incandescent
 Glorious Resplendent Gilded
 Smooth Ideal Perfect Symmetric
 Banished Cryptic Forgotten Hidden Spectral Lost Secret
-Consuming Devouring Hungry Empty Gnawing
+Consuming Devouring Hungry Empty Gnawing All-Consuming
 Patient Silent Lone Solitary
 Crystal
 Demonic Hellish Infernal Unholy Unhallowed Blasphemous
@@ -64,4 +64,5 @@ Poisonous Toxic Radioactive Venomous Noxious
 Venomous Vicious Hateful
 Pernicious Attery
 Vitreous
-Stalking Skulking Watchful Vigilant
+Stalking Skulking Watchful Vigilant Watching All-Seeing
+Ascended Ascendant

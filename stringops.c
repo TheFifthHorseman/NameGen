@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include "stringops.h"
-#define NAMEGEN_BUFFER_SIZE 256
+#define NAMEGEN_BUFFER_SIZE 1024
 /*
-inline int too_similar(char* a, char* b)
+int too_similar(char* a, char* b)
 {
 	int i;
 	if (a==b) return 1;
@@ -17,7 +17,7 @@ inline int too_similar(char* a, char* b)
 }
 */
 
-inline int count_character_occurences(char *string, char *charsToCount)
+int count_character_occurences(char *string, char *charsToCount)
 {
 	int counter=0;
 	if(string)
@@ -27,7 +27,7 @@ inline int count_character_occurences(char *string, char *charsToCount)
 	return counter;
 }
 
-inline int split_string_DESTRUCTIVE(char* inputString, int* pieceCount, char*** ouputPieces, char* splitBy)
+int split_string_DESTRUCTIVE(char* inputString, int* pieceCount, char*** ouputPieces, char* splitBy)
 /* Split a char array into an array of char arrays using characters from a provided array as separators
  DESTRUCTIVE FOR INPUT ARGUMENT!!!*/
 {
@@ -39,19 +39,31 @@ inline int split_string_DESTRUCTIVE(char* inputString, int* pieceCount, char*** 
 	return *pieceCount;
 }
 
-inline char* trim(char *t)
+char* trim(char *t)
 /* Pointer-safe inplace trim. */
 {
-	char *e;
+	char *e/*, *s*/;
 	if (t==NULL) return NULL;
 /*	if ((e=strstr(strings[i], "//")))	*e=0; */		 /* Remove any part of the string following a double-slash. */
 	e=t+strlen(t);										 /* *e initially points to end of string */
 	do *(e--)=0; while (strchr(WhiteSpace, *e) && e>=t); /* Find last char that is not \r\n\t */
 	e=t+strspn (t,WhiteSpace);						     /* Find first char that is not \t */
+/*	if (e!=t)
+	{
+		s=t;
+		while (*e)
+		{
+			*s=*e;
+			++s;
+			++e;
+		}
+		*s=0;
+	}
+	return t;*/
 	return (char*)(e>t?memmove(t,e,strlen(e)+1):t);		 /* memmove string contents and terminator */
 }
 
-inline void clean_string_array(char** strings, int* stringCount)
+void clean_string_array(char** strings, int* stringCount)
 /* Trim strings in array, remove null-length entries and comments */
 {
 	int i;
@@ -62,42 +74,42 @@ inline void clean_string_array(char** strings, int* stringCount)
 	{
 		if (trim(strings[i]))
 		{
-		    blockCommentStart=blockComment?strings[i]:strstr(strings[i], "/*");
-		    blockCommentEnd=blockCommentStart?strstr(blockCommentStart, "*/"):NULL;
-            lineCommentStart=strstr(strings[i], "//");
+			blockCommentStart=blockComment?strings[i]:strstr(strings[i], "/*");
+			blockCommentEnd=blockCommentStart?strstr(blockCommentStart, "*/"):NULL;
+			lineCommentStart=strstr(strings[i], "//");
 
-            while (blockCommentStart && blockCommentEnd)
-            {
-                blockComment=0;
-                blockCommentEnd+=2;
-                if (lineCommentStart && lineCommentStart<blockCommentEnd)
-                {
-                    *blockCommentStart=0;
-                    lineCommentStart=NULL;
-                    blockCommentEnd=NULL;
-                }
-                else
-                {
-                    memmove(blockCommentStart,blockCommentEnd,strlen(blockCommentEnd)+1);
-                    blockComment=(int)(blockCommentStart=strstr(strings[i], "/*"));
-                    blockCommentEnd=blockCommentStart?strstr(blockCommentStart, "*/"):NULL;
-                }
-            }
-            if (lineCommentStart)
-                *lineCommentStart=0;
-            if ((blockComment=(int)(blockCommentStart=blockComment?strings[i]:strstr(strings[i], "/*"))))
-                *blockCommentStart=0;
+			while (blockCommentStart && blockCommentEnd)
+			{
+				blockComment=0;
+				blockCommentEnd+=2;
+				if (lineCommentStart && lineCommentStart<blockCommentEnd)
+				{
+					*blockCommentStart=0;
+					lineCommentStart=NULL;
+					blockCommentEnd=NULL;
+				}
+				else
+				{
+					memmove(blockCommentStart,blockCommentEnd,strlen(blockCommentEnd)+1);
+					blockComment=(int)(blockCommentStart=strstr(strings[i], "/*"));
+					blockCommentEnd=blockCommentStart?strstr(blockCommentStart, "*/"):NULL;
+				}
+			}
+			if (lineCommentStart)
+				*lineCommentStart=0;
+			if ((blockComment=(int)(blockCommentStart=blockComment?strings[i]:strstr(strings[i], "/*"))))
+				*blockCommentStart=0;
 		}
 		if (strings[i]==NULL || strings[i][0]==0 /*|| strings[i][0]=='/'*/)
 		{
 			if (i<--*stringCount)
-                memmove(&strings[i], &strings[i+1], sizeof(char*)*(*stringCount-i));
+				memmove(&strings[i], &strings[i+1], sizeof(char*)*(*stringCount-i));
 			i--;
 		}
 	}
 }
 
-inline char* random_string(char** stringArray, int stringCount)
+char* random_string(char** stringArray, int stringCount)
 {
 	switch (stringCount)
 	{
@@ -107,7 +119,7 @@ inline char* random_string(char** stringArray, int stringCount)
 	}
 }
 
-inline char* file_get_text(char* fileName)
+char* file_get_text(char* fileName)
 {
 	FILE * sourceFile;
 	char * loadedData;
@@ -134,7 +146,7 @@ inline char* file_get_text(char* fileName)
 	}
 }
 
-inline char* files_get_text(char* fileNames, char* workingDir)
+char* files_get_text(char* fileNames, char* workingDir)
 {
     char* fileNameBuffer;
 	FILE * sourceFile;
@@ -184,14 +196,14 @@ inline char* files_get_text(char* fileNames, char* workingDir)
     free(nameArray);
     return loadedData;
 }
-inline char** files_get_lines(char* fileNames, int* lineCount)
+char** files_get_lines(char* fileNames, int* lineCount)
 {
 	char** lines;
 	split_string_DESTRUCTIVE(files_get_text(fileNames,"Galaxy"), lineCount, &lines, "\n");
 	return lines;
 }
 
-inline char** file_get_lines(char* fileName, int* lineCount)
+char** file_get_lines(char* fileName, int* lineCount)
 {
 	char** lines;
 	split_string_DESTRUCTIVE(file_get_text(fileName), lineCount, &lines, "\n");

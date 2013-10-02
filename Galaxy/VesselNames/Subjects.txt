@@ -6,7 +6,9 @@ Tomb Sepulchre Vault Grave Crypt
 Pyramid Obelisk Temple Shrine Altar Tower
 Bastard Scion Descendant Son Offspring Child
 Spawn Get Progeny Young Brood Flock
-Hunger Void Emptiness Darkness Twilight Evil
+Hunger Void Emptiness 
+Void Darkness Twilight Shadows
+Evil
 Ancestor Father Grandfather
 Mother Matriarch
 Ascendant Forebear Seed Source Forefather Patriarch Consort Beginning
@@ -23,7 +25,7 @@ Lair Nest Hive Pit Den Well
 Storm Hurricane Fury Malice Rage Wrath Hate Spite
 Hate Spite
 Defilement Defiler Contagion Plague Pandemic Sickness
-Harvest Harvester Reaper/*Crop*/
+Harvest Harvester Reaper Reaver/*Crop*/
 Reaper
 Chaos Strife Entropy Anarchy Feud
 Murderer Slayer Slaughterer Ravager Butcher
@@ -33,7 +35,7 @@ Judge Judgement Nemesis Sentence Enemy Justice Vengeance Avenger
 Seeker Pilgrim Hunter Hound Traveller Huntsman
 Despoiler Predator Plunderer Ravager
 Vigil Vigilance Sentinel Sentry Guardian Watcher Knight Rook Templar Paladin Warrior Marauder Berserker
-Bishop Vicar Cleric
+Bishop Vicar /*Cleric*/
 Soul Haunter Spirit Ghost Wraith Specter Apparition Phantom Ghoul Eidolon Revenant
 Prisoner Servant Slave Worshipper Follower Agent
 Imperative Decree Law Order Command

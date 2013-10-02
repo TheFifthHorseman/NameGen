@@ -4,7 +4,7 @@
 /*
     Based on Baudot code.
 */
-inline char* get_5bit_hash_table ()
+char* get_5bit_hash_table ()
 {
     char* hashTable;
     char* mapptr;
@@ -22,7 +22,7 @@ inline char* get_5bit_hash_table ()
     return hashTable;
 }
 
-inline int get_hash_bits(unsigned char* hashTable)
+int get_hash_bits(unsigned char* hashTable)
 {
     int m=0;
     int i;
@@ -46,7 +46,7 @@ inline int get_hash_bits(unsigned char* hashTable)
     The fingerprint is a representation of the string's first three characters
     converted into 5 bit encoding and packed into an int
 */
-inline int string_fingerprint(char* str, char* hashMapping, int hashBits)
+int string_fingerprint(char* str, char* hashMapping, int hashBits)
 {
     int i=0;
     int t;
@@ -58,14 +58,16 @@ inline int string_fingerprint(char* str, char* hashMapping, int hashBits)
         if (!t)
             return 0;
         i=t;
-        if ((t=*++str))
+        ++str;
+        if ((t=*str))
         {
             t=hashMapping[t];
             if (!t)
                 return i;
             i<<=hashBits;
             i+=t;
-            if ((t=*++str))
+            ++str;
+            if ((t=*str))
             {
                 t=hashMapping[t];
                 if (!t)
