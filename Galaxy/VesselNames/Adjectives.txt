@@ -5,7 +5,7 @@ Dark Tenebrous Shadowy Shadowed Gloomy
 Summoning Calling Summoned
 Sentient
 Soundless Silent Noiseless
-Silent Screaming Howling Ululating Roaring Chittering
+Silent Screaming Howling Ululating Roaring Chittering Mewling Gibbering Snarling
 Fading Grey Faded
 Haunted Grim Dead Undead Unliving Undying Dying Fallen Morbid Rotting Revenant Ghastly
 Cold Frozen Freezing
@@ -14,7 +14,8 @@ Lurking Shrouded Hidden
 First Final Last Ultimate
 Unrestrained Unbound Boundless Unshackled Unchained Limitless Unlimited Chained Sealed Imprisoned
 Black Crimson Red Scarlet Iridescent Purple Grey Lambent Yellow Cerulean Viridian
-Luminous Radiating Lambent Star
+Luminous Radiating Lambent Star Starry
+Starry Shining
 Living Breathing Beating
 Writhing Pulsating Undulating
 Bitter Vengeful

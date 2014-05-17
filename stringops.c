@@ -192,6 +192,7 @@ char* files_get_text(char* fileNames, char* workingDir)
         else
             fprintf(stderr, "Failed to read contents from [%s]\n", nameArray[i]);
 	}
+	loadedData[totalLength+fileCount]=0;
     free(fileNameBuffer);
     free(nameArray);
     return loadedData;

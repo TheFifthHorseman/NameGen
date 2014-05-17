@@ -30,7 +30,7 @@ static void load_manifest_entry (char* manifestEntry, struct DICTIONARY* diction
 {
     int j;
 	char  *patternPosition, *fileNameBuffer;
-	fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
+	fileNameBuffer=(char*)calloc(NAMEGEN_BUFFER_SIZE,sizeof(char));
     if (strlen(manifestEntry)>3)
     {
         j=(int)*(patternPosition=trim(manifestEntry));
@@ -63,7 +63,7 @@ static void dictionary_init(unsigned int maximumOutputLength, char* manifestFile
 		wordListChoices[i]=blank_wordlist();
 	}
 	hardcodedWordListIndices=(char*)calloc(256,sizeof(char));
-	fileNameBuffer=(char*)malloc(sizeof(char)*NAMEGEN_BUFFER_SIZE);
+	fileNameBuffer=(char*)calloc(NAMEGEN_BUFFER_SIZE, sizeof(char));
 	manifest=load_wordlist(get_mod_file_path_2("Galaxy", manifestFile, fileNameBuffer));
 /*	manifest_ptr=&manifest;*/
 	for (i=0; i<manifest.entryCount; ++i)
@@ -90,7 +90,7 @@ static void get_non_colliding_wordlist(struct DICTIONARY* dictionaries, struct W
         for (j=hashCount=0; j<dictionaries[i].entryCount;++j)
             if (dictionaries[i].entryList[j].entryCount>hashCount)
                 hashCount=dictionaries[i].entryList[j].entryCount;
-        hashes=(int*)calloc(1,sizeof(int)*hashCount);
+        hashes=(int*)calloc(hashCount,sizeof(int));
 
         do
         {
@@ -167,8 +167,8 @@ static void grammar_produce (struct DICTIONARY* dictionaries, struct WORDLIST* w
     char* fileNameBuffer;
     int tokenLoops;
     int i;
-    fileNameBuffer=(char*)calloc(1, sizeof(char)*NAMEGEN_BUFFER_SIZE);
-    patternPosition=(char*)memcpy((void*)fileNameBuffer, (void*)selectedPattern, sizeof(char)*NAMEGEN_BUFFER_SIZE);
+    fileNameBuffer=(char*)calloc(NAMEGEN_BUFFER_SIZE, sizeof(char));
+    patternPosition=strcpy(fileNameBuffer, selectedPattern);
     tokenLoops=MAXIMUM_TOKEN_DEPTH;
     memset(hashExists,0x00,hashTableSize);
     do
@@ -207,16 +207,16 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
         return (char*) calloc(1,1);
 	}
     init_hash_tables();
-	dictionaries=(struct DICTIONARY *)calloc(sizeof(struct DICTIONARY), 256);
-	wordListChoices=(struct WORDLIST *)calloc(sizeof(struct WORDLIST), 256);
+	dictionaries=(struct DICTIONARY *)calloc(256, sizeof(struct DICTIONARY));
+	wordListChoices=(struct WORDLIST *)calloc(256, sizeof(struct WORDLIST));
 	dictionary_init(maximumOutputLength, manifestFile, dictionaries, wordListChoices, &hardcodedWordListIndices);
 /*
 	for (appendPointer=hardcodedWordListIndices; *appendPointer; ++appendPointer)
 		for (j=0; j<wordListChoices[(int)*appendPointer].entryCount; ++j)
 			fprintf(stderr, "[%s]\n", wordListChoices[(int)*appendPointer].entryList[j]);
 */
-	fileNameBuffer=(char*)calloc(1, sizeof(char)*NAMEGEN_BUFFER_SIZE);
-	resultString=(char*)calloc(1, sizeof(char)*NAMEGEN_BUFFER_SIZE);
+	fileNameBuffer=(char*)calloc(NAMEGEN_BUFFER_SIZE, sizeof(char));
+	resultString=(char*)calloc(NAMEGEN_BUFFER_SIZE, sizeof(char));
 	patterns=load_wordlist(get_mod_file_path_2("Galaxy",patternFile, fileNameBuffer));
     if( patterns.entryCount==0 )
     {
@@ -246,7 +246,7 @@ char* name_generator(unsigned int maximumOutputLength, char* manifestFile, char*
         if (*appendPointer=='_')
             *appendPointer=' ';
     appendPointer=resultString;
-    strcpy(resultString=(char*)calloc(1, maximumOutputLength),appendPointer);
+    strcpy(resultString=(char*)calloc(maximumOutputLength, sizeof(char)),appendPointer);
     namegen_cleanup(appendPointer, fileNameBuffer, dictionaries, &patterns, wordListChoices, hardcodedWordListIndices);
 	return resultString;
 }
