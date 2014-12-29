@@ -1,0 +1,46 @@
+Summons Calls
+Screams Howls Ululates Roars Chitters Mewls Gibbers Snarls
+Fades
+Haunts Never_Dies Dies Falls Rots Decays Festers
+Freezes
+Infects Fouls Bloats Festers Withers
+Lurks Shrouds Hides
+Binds Unbinds Shackles Unshackles Seals Unseals Chains Unchains Imprisons Unleashes
+Blackens
+Radiates
+Shines
+Lives Breathes Beats Survives
+Writhes Pulsates Undulates
+Savages
+Towers
+Shambles Disturbs
+Gibbers
+Drips
+Snakes
+Skitters Crawls Slithers Shambles
+Horrifies Terrifies
+Sunders Pierces Wounds Strangles Drowns Ruins Severs Shatters Breaks Destroys Twists Warps  Mutates Transforms
+Defies Endures
+Corrupts Maligns
+Bleeds
+Burns Incandesces
+Consumes Devours Hungers Gnaws Consumes_All
+Blasphemes Curses Damns Condemns
+Soars Drifts
+Freezes Dreams Sleeps Hibernates Waits Slumbers Rises Awakens
+Petrifies Fossilizes
+Rends Reaps Sunders Destroys Annihilates Pierces Shatters Severs Strangles Drowns
+Alters Twists Warps Mutates Shifts Transforms
+Manifests
+Circles /*Rolls*/
+Whispers
+Wars Fights Battles
+Calcifies
+Weaponized
+Poisons Radiates Envenoms
+Hates
+Vitrifies
+Stalks Skulks Watches Observes Sees_All
+Ascends Embodies
+Kills Murders Slaughters
+Infests

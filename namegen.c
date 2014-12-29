@@ -9,7 +9,7 @@
 #include "namegen.h"
 #include "string_fingerprint.h"
 /* Buffer size for file names and output string. Should be larger than maximum expected length of either of these. */
-#define NAMEGEN_BUFFER_SIZE 1024
+#define NAMEGEN_BUFFER_SIZE 512
 /* How many times to retry generation if:
     * The output is too long (change pattern if retries run out)
     * The word may be a synonym of one already used (keep last selection if retries run out)

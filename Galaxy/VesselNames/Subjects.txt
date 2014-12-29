@@ -7,52 +7,58 @@ Pyramid Obelisk Temple Shrine Altar Tower
 Bastard Scion Descendant Son Offspring Child
 Spawn Get Progeny Young Brood Flock
 Hunger Void Emptiness 
-Void Darkness Twilight Shadows
+Void Darkness Twilight Shadow
 Evil
 Ancestor Father Grandfather
 Mother Matriarch
 Ascendant Forebear Seed Source Forefather Patriarch Consort Beginning
-Horizon Limit Reach
-Realm Kingdom
+Horizon /*Limit*/ Reach
+Realm Kingdom Dimension Manifold
 Claw Spine Spike
 Legacy Heir Inheritor Finale
 Loom Weave Web Strand Chain Lattice Weaver
 Rack Manacle Noose 
-Tribe Kindred
+Tribe Kindred Race /*Kind*/
 Engine Device Construct
 Agent System Construct Construction
 Lair Nest Hive Pit Den Well
+Pain Torment Torture Agony
 Storm Hurricane Fury Malice Rage Wrath Hate Spite
 Hate Spite
 Defilement Defiler Contagion Plague Pandemic Sickness
 Harvest Harvester Reaper Reaver/*Crop*/
 Reaper
 Chaos Strife Entropy Anarchy Feud
-Murderer Slayer Slaughterer Ravager Butcher
+Murderer Slayer Slaughterer Ravager Butcher Murder Carnage Slaughter
 Death Fate Damnation Doom Destiny End Fortune Misfortune Order Fall Mire Oblivion Annihilation Ragnarok
 Harbinger Herald Omen Prophet Portent Messenger Bringer Vanguard Apostle Prophecy Envoy
 Judge Judgement Nemesis Sentence Enemy Justice Vengeance Avenger
 Seeker Pilgrim Hunter Hound Traveller Huntsman
 Despoiler Predator Plunderer Ravager
 Vigil Vigilance Sentinel Sentry Guardian Watcher Knight Rook Templar Paladin Warrior Marauder Berserker
+Stalker Watcher Lurker Hunter
 Bishop Vicar /*Cleric*/
 Soul Haunter Spirit Ghost Wraith Specter Apparition Phantom Ghoul Eidolon Revenant
 Prisoner Servant Slave Worshipper Follower Agent
 Imperative Decree Law Order Command
 Cult Cabal Order
+Order Brotherhood Sisterhood Fraternity Sorority
 Thorn Spike Fang Claw
-Eye /*Lens*/ Feeler
-Tendril Hand Limb Tentacle Head Skull Shell Husk Mandible Jaws Teeth Maw Fist Gullet Appendage Mouth
+Eye Eye /*Lens*/ Feeler Gaze Sight
+Tendril Hand Limb Tentacle Head Skull Shell Husk Mandible Jaws Teeth Maw /*Fist*/ Claw Talon Gullet /*Appendage*/ Mouth Bone Rib
 Shell Husk Cocoon Chrysalis Hulk
-Ash Dust Flame Cinders
-Heart Core Center Matrix Focus
+/*Ash*/ Dust Flame Cinders Blaze Fire
+Heart Core /*Center*/ Matrix Meridian Focus
 Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Corona
 Chalice Grail Vessel
 Arcanum Arcana Secret Mystery Enigma Question
 Sword Hammer Blade Scythe Arrow Lance Sickle Weapon
 Legion Cohort Army
-Speaker Whisper Whisperer
+Speaker Whisper Whisperer Scream Call
+Speaker
+Scream
+Whisper Whisperer 
 Contract Agenda Deal
 Witch
 Poison Venom Toxin Radiation Radiance Glow

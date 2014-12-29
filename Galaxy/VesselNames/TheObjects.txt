@@ -1,25 +1,30 @@
 Dead
-Undead
+Undead Undying Unliving
+Living
 Titans
 Storms
 Plagues
+Infection Infections
+Infestation Infestations
 Omens Prophets Ends Endings
 Ancients
 Ages Eternity Millenia Aeons
 Abominations Nightmares
-Thorns Spikes Blades Claws Horns Spires Bones Teeth Jaws Maws Skulls
-Tentacles Limbs Tendrils Fists Appendages
-Eyes
+Thorns Spikes Blades Claws Horns Spires Bones /*Teeth*/ Jaws Maws Skulls Ribs Skeletons
+Tentacles Limbs Tendrils /*Fists Appendages*/ Claws Talons
+/*Eyes Senses*/
 Fates Disir Destinies Endings
 Lords Kings Gods Tyrants Precursors
+Tyrant
 Travellers Voyagers
 Watchers Souls Spirits Wraiths Specters Apparitions Phantoms Ghouls Revenants
 Oblivion
 Void Twilight Dark Darkness Shadows
 Horizons
-Staves Pentacles Swords Arrows Lances
-Magicians Emperors Chariots Hermits Wheels Fortunes Devils Towers Stars Moon Moons Sun Suns Judgement World Worlds Fools
+Swords Arrows //Staves Pentacles Lances
+Magicians Emperors Chariots Hermits /*Wheels*/ Fortunes Devils Towers Stars Moon Moons Sun Suns Judgement /*World*/ Worlds Fools
 Arcana Mysteries Secrets Enigmas
-Ruins Ashes Grave
+Ruins /*Ashes*/ Grave
 Moon Sun Stars
 Purgatory
+Host Army Myriad Legion Legions Hosts Many

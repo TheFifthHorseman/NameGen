@@ -3,32 +3,40 @@
 Chaos Disorder  Anarchy Entropy Madness
 Storms Thunder Strife
 Spite Hate Hatred War Battle Feuds Havoc Fury Malice Rage Wrath Savagery Genocide
-Plague Contagion
+Plague Contagion Disease Filth Infection Infestation
 Harvests
 Calamity Misfortune Fate Death Omens Prophets Ends Endings
 Ancients
 Aeons Ages Eternity Millenia Time
 Horrors Abominations Monsters Horror Terror Nightmares
-Agony Pain Torment Torture Tears Woe
+Nightmares Dreams Illusions
+Agony Pain Torment Torture Tears Woe Torments
 Despair Sorrow Grief Torment Anguish Lament Tears
-Thorns Spikes Blades Severance Claws Horns Spires Bones Teeth Jaws Maws Skulls
-Hands Tentacles Limbs Tendrils Fists Appendages
-Eyes
-Legions Armies /*Cohorts*/
-Death Fates Damnation Doom Destinies Endings Misfortune Events Honor
+Thorns Spikes Blades Severance Claws Horns Spires Bones Teeth Jaws Maws Skulls Skeletons Ribs
+Hands Tentacles Limbs Tendrils /*Fists Appendages*/ Talons Claws
+/*Eyes Senses*/
+Legions Armies /*Cohorts*/ Hosts
+Death Fates Damnation Doom Destinies Endings Misfortune Events /*Honor*/
+Death Decay Rot
+Undeath Unlife
+/*Life*/
 Lords Kings Gods Tyrants Precursors
 Travellers Voyagers Journeys
 Desecration Defilement
+Infested Infestation Infection Vermin
 Watchers Souls Spirits Mind Soul Ghosts Wraiths Specters Apparitions Phantoms Ghouls Revenants
 Damnation Oblivion
 Void Twilight Gloom Darkness Shadows Shadow
 Horizons
-Staves Pentacles Swords /*Wands*/ Grails Arrows Lances
-Magicians Emperors Chariots Hermits Wheels Fortunes Justice Death Temperance Devil Tower Stars Moon Moons Sun Suns Judgement World Worlds /*Fool*/ Fools
+Swords Arrows //Staves Pentacles/*Wands*/ Grails  Lances
+Magicians Emperors Chariots Hermits Wheels Fortunes Justice Death Temperance Devil Tower Stars Moon Moons Sun Suns Judgement /*World*/ Worlds /*Fool*/ Fools
 Arcana Mysteries Secrets Enigmas Enigma
-Ruin Ash Dust Flames
-Witches
-Insects Spiders
-Worms Larvae Grubs Maggots Vermin
-Worms
-Husks Corpses
+Ruin /*Ash*/ Dust Flames /*Ashes*/ Ruins Cinders
+Ruin Ruins Destruction Devastation
+/*Ash Ashes*/
+/* Witches */
+Insects Spiders Scorpions Scarabs
+Serpents
+Worms Larvae /*Grubs*/ Maggots Vermin
+Worms Maggots
+Husks Corpses Bodies Minds

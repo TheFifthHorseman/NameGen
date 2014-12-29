@@ -2,10 +2,10 @@ Far Distant
 Dust Ice
 Jeweled
 Rocky Granite Basalt
-Luminous Radiant Lambent Glowing
+Luminous Radiant Lambent Glowing Luciferous
 Halo Helix Helical Spiral Linear Symmetric Irregular Mirror Twin Binary Dual Trinary Triple Radial
 Drifting Sargasso
-Ancient Ageless Eternal
+Ancient Ageless Eternal Elder
 Webbed Cocoon Cocooned Spiderweb
 Eibon Ebon Blackened Black White Crimson Red Scarlet Iridescent Grey 
 Dim Murky
@@ -18,9 +18,9 @@ Soundless Silent
 Impossible Mad Insane Gibbering Lovecraftian
 Haunted Grim Morbid Foreboding Grave
 Undead Unliving Undying Zombie Revenant
-Charnel Dead Falling Fallen Dying Rotting Decaying Death
+Charnel Dead Falling Fallen Dying Rotting Decaying Death Lifeless Deathless Carrion Ghastly Cadaverous Rotten Decayed
 Killing Killer Murdering Murder Murderous
-Cold Frozen Freezing Icy
+Cold Frozen Freezing Icy Winter
 Pestilent Foul Virulent Diseased Cancerous Festering
 Chained Caged Prison Sealed Imprisoned Isolated
 Lurking Shrouded Hidden Concealed
@@ -58,3 +58,4 @@ Fortress Citadel Pyramid
 Poisonous Toxic Radioactive Venomous Noxious
 Pernicious Attery
 Vitreous
+Outer

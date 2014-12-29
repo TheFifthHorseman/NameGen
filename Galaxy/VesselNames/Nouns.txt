@@ -1,10 +1,14 @@
 Comet Corona
 Hunger Void Emptiness Darkness Twilight Evil
+Dawn Twilight Dusk
 Devourer Harvest Harvester
 Death Fate Doom Destiny Destroyer
 Harbinger Herald Vanguard Apostle
 Judgement Nemesis
 Abomination Monster Monstrosity Nightmare Horror Terror Beast Creature Thing Desecration
+Infector Infestor Defiler
+Infection Infestation Defilement
+Nightmare Dream Dreamer
 Anomaly
 Aeon
 Prison /*Cell*/ Cage
@@ -17,24 +21,29 @@ Paradox
 Legacy Inheritance
 Flame Inferno
 Storm Fury Rage Wrath Feud War
+Pain Torment Torture Agony
 Voyager
 Chaos Strife Entropy Anarchy
 Death Fate Damnation Doom Destiny End Fortune Misfortune Order Fall Mire Oblivion Annihilation
 Defiler Contagion Plague Pandemic Calamity Disease
-Vigil Vigilance Watch Sentinel Sentry Guardian Watcher Knight Rook Bishop Templar Paladin Warrior Marauder Berserker
-Bishop God Lord /*Lady*/ Idol Ruler Tyrant Master Emperor Imperator Empress Queen King Imperatrix General Mistress 
-Brother Sister Sibling Twin
+Vigil Vigilance /*Watch Sentinel Sentry Guardian*/ Watcher /*Knight*/ Rook Bishop Templar /*Paladin*/ Warrior Marauder Berserker
+Stalker Watcher Lurker Hunter
+Bishop God Lord /*Lady*/ Idol Ruler Tyrant Master Emperor Imperator Empress Queen King Imperatrix General Mistress
+Dominator Enslaver Slaver
+Brother Sister //Sibling Twin
 Seeker Hunter Hound
 Thorn Spike Fang Claw
 Reaper
 Razor Reaper Blade Edge Severance Reaver Harvester
 Murderer Slayer Slaughterer Ravager Butcher
-Murder Slaughter Ravage Butchery Murder 
-Dead Dead Dead Undead
-Specter Haunter Shadow Wraith
+Murder Slaughter Ravage Butchery Murder Carnage
+/*Dead Dead Dead*/ Undead Death Undeath Unlife
+Specter Haunter Shadow Wraith Tulpa Spirit Shade
 Watcher Sentinel Guardian
 //Bell
 Sword Hammer Blade Scythe Sickle Arrow Lance Weapon
+Sword Arrow Staff Pentacle Wand Grail Lance
+Armor Shield Mantle Crown
 Breath Rain
 Crone
 Witch
@@ -43,14 +52,17 @@ Cult Cabal Cultist Order
 Order Command Decree Law
 Druid
 Engine Machine Device
-Shell Husk Cocoon Chrysalis Carcass
-Fog
+Shell Husk Cocoon Chrysalis
+Husk Carcass Carrion Cadaver
+/*Fog*/ Dust Vapor Smoke
+Shape Form Echo Shadow
 Future
 Skull Grave Shroud Pyre Blood Bone Spine
-Hand Limb Tentacle Tendril Fist Appendage
-Serpent Hydra Dragon
+Hand Limb Tendril /*Fist Appendage*/ Claw Talon
+Serpent Hydra /*Dragon*/
+Scarab Scorpion Insect Wasp Spider Arachnid
 Ogre Titan Giant Hulk Leviathan Colossus
-Legion Cohort Army
+Legion Cohort Army Host Myriad
 Hymn
 //Jester
 Night Moon Star
@@ -58,22 +70,23 @@ Beginning Father Mother Patriarch Matriarch Source
 Priest Prophet Prophecy
 Circle
 Scepter
-Smoke
 Threat Enemy Foe
 Stallion Steed Rider Chariot
 Vanguard
-Whisper Whisperer Speaker
-Horizon Reach Limit
-Heart Core Center Meridian Focus
+Whisper Whisperer Speaker Call Summon Summoning
+Horizon Reach /*Limit*/
+Heart Core /*Center*/ Matrix Meridian Focus
 Magician Priestess Empress Emperor Hierophant Chariot Strength Hermit Wheel Fortune Justice Death Temperance Devil Tower Star Moon Sun Judgement World /*Fool*/
 Devil Demon Djinn Ifrit Efreet
 Chalice Grail Vessel 
-Chariot
-Ship Craft Carrier Drakkar Chariot
+Chariot 
+/*Ship*/ Craft Carrier Drakkar Chariot
 Arcanum Arcana Mystery Secret Enigma Question
 Jaw Maw Mouth Jaws Gullet
 Legend Saga
-Widow
+Widow Bride
 Contract Agenda
-Fire Blaze Ash Cinder
-Worm Grub Maggot Larva
+Fire Blaze /*Ash*/ Cinder
+/*Worm*/ Maggot Larva
+/*Worm Maggot*/
+Touch Word Whisper Will Call Scream

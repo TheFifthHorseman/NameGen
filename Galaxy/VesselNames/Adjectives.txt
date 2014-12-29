@@ -7,14 +7,14 @@ Sentient
 Soundless Silent Noiseless
 Silent Screaming Howling Ululating Roaring Chittering Mewling Gibbering Snarling
 Fading Grey Faded
-Haunted Grim Dead Undead Unliving Undying Dying Fallen Morbid Rotting Revenant Ghastly
-Cold Frozen Freezing
-Pestilent Contagious Infectious Foul Bloated Virulent Diseased Cancerous Sickly Festering
+Haunted Grim Dead Undead Unliving Undying Dying Fallen Morbid Rotting Revenant Ghastly Decaying Carrion Cadaverous Lifeless Deathless Rotten Decayed
+Cold Frozen Freezing Winter
+Pestilent Contagious Infectious Foul Bloated Virulent Diseased Cancerous Sickly Festering Withered Withering
 Lurking Shrouded Hidden
 First Final Last Ultimate
-Unrestrained Unbound Boundless Unshackled Unchained Limitless Unlimited Chained Sealed Imprisoned
-Black Crimson Red Scarlet Iridescent Purple Grey Lambent Yellow Cerulean Viridian
-Luminous Radiating Lambent Star Starry
+Unrestrained Unbound Boundless Unshackled Unchained Limitless Unlimited Chained Sealed Imprisoned Unleashed
+Blackened Black Crimson Red Scarlet Iridescent Purple Grey Lambent Yellow Cerulean Viridian
+Luminous Radiating Lambent Star Starry Luciferous
 Starry Shining
 Living Breathing Beating
 Writhing Pulsating Undulating
@@ -25,45 +25,50 @@ Chaotic Anarchist Shambolic Entropic Disturbing Disturbed
 Mad Insane Gibbering Lovecraftian
 Giant Cyclopean Massive Greater Titanic Immeasurable Gigantic Infinite Endless Numberless Countless Uncounted Unnumbered Hulking
 Reptilian Scaly Scaled Slimy Squamous Dripping
-Tendrilous Tentacled Many-Limbed Clawed Toothed Limbless Fanged
+Tendrilous Tentacled Many-Limbed Clawed Toothed Limbless Fanged Snaking Manifold
 Spiked Thorny Razor-edged Bladed Thorned Horned
-Chitinous Skittering Crawling Slithering
+Chitinous Skittering Crawling Slithering Shambling
 Horrifying Terrifying Horrific Nightmarish
 Inexplicable Mysterious Impossible Unfathomable Incalculable Unpredictable
 Glass Indestructible Unbreakable Sundered Pierced Wounded Strangled Drowned Ruined Severed Shattered Broken Destroyed Wretched Twisted Warped Mutant Mutated Transformed
-Untamed Unceasing Unstoppable Defiant Enduring
-Vile Dark Evil Wicked Corrupt Corrupted Malign Malignant Odious
+Untamed Unceasing Unstoppable Inexorable Defiant Enduring
+Vile Dark Evil Wicked Corrupt Corrupted Malign Malignant Odious Corrupting
 Blind Blinding Eyeless Many-Eyed Sightless All-Seeing
 Bloody Brutal Bleeding
 Thunderous
-Burning Fiery Incandescent
+Burning Fiery Incandescent Ashen Burned Scorched
 Glorious Resplendent Gilded
 Smooth Ideal Perfect Symmetric
 Banished Cryptic Forgotten Hidden Spectral Lost Secret
 Consuming Devouring Hungry Empty Gnawing All-Consuming
+Empty Empty Abyssal Cavernous
 Patient Silent Lone Solitary
 Crystal
-Demonic Hellish Infernal Unholy Unhallowed Blasphemous
-Soaring Swift Drifting Slow
-Frozen Dreaming Sleeping Hibernating Waiting Slumbering Restless Dreamless
+Demonic Hellish Infernal Unholy Unhallowed Blasphemous Cursed Accursed Damned Damning Condemned
+Soaring Swift Drifting 
+Creeping Crawling Ponderous Shambling Inescapable Inexorable
+Rising Risen Awakening Awakened Frozen Dreaming Sleeping Hibernating Waiting Slumbering Restless Dreamless
 Stone Petrified Fossilized Granite Basalt
 Hanged Hanging High
-Rending Reaping Sundering Destroying Annihilating Piercing Shattering Severing Strangling Drowning
-Twisting Warping Mutating Shifting Transforming Solid
-Solid Ghostly Phantom
-Circling Rolling /*Spinning Rotating*/
+Rending Reaping Sundering Destroying Annihilating Piercing Shattering Severing Strangling Drowning Grinding
+Twisting Warping Mutating Shifting Transforming /*Solid*/ Unstable Altering
+/*Solid*/ Ghostly Phantom Corporeal Palpable Manifest 
+Circling /*Rolling*/ /*Spinning Rotating*/
+/*Stable*/ Unstable
 Sorrowful
 Legendary
 Whispered Whispering
-Angled Many-Angled Angular Triangular
+Angled Many-Angled Angular Triangular Manifold
 Pyramidal
 Insectile Spidery Arachnid Crustacean
-Warring Warrior Militant Bellicose Belligerent
-Bone Bony Boneless Calcified
+Warring Warrior Warring Warrior Militant /*Bellicose*/ Belligerent
+Bone Bony Boneless Calcified /*Skeletonized*/ Skeletal
 Weaponized
 Poisonous Toxic Radioactive Venomous Noxious
 Venomous Vicious Hateful
-Pernicious Attery
+/*Pernicious Attery*/ Dark Shadowy
 Vitreous
-Stalking Skulking Watchful Vigilant Watching All-Seeing
-Ascended Ascendant
+Stalking Skulking Watchful Vigilant Watching All-Seeing Knowing
+Ascended Ascendant Embodied Incarnate
+Killer Killing Murdering Murderous Genocidal Slaughtering
+Infested Infesting Verminous

@@ -15,4 +15,5 @@ t the_ _
 W @VesselNames\Subjects.txt
 X @VesselNames\Nouns.txt
 Y @VesselNames\Objects.txt
+V @VesselNames\Verbs.txt
 y @VesselNames\TheObjects.txt

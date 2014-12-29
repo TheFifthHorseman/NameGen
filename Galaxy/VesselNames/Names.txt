@@ -1,5 +1,8 @@
-Outsider
+Demon The_Demon The_Demon
+Outsider The_Outsider
+
 Cybele
+Lilith Lilitu
 
 //SCIENCE
 Cherenkov
@@ -9,6 +12,8 @@ Cain
 Judas Iscariot
 Abaddon
 Satan
+Samael
+Lucifer
 
 // Greek
 Hades
@@ -158,3 +163,4 @@ Tindalos
 
 // For fun!
 Armok
+Sankis
